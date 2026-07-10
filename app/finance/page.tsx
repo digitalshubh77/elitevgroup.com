@@ -62,7 +62,7 @@ export default function FinancePage() {
 
       <PageSection variant="white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-5 mb-8">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-3 md:gap-4 mb-5">
             {financeFeatures.map((feature, i) => (
               <div
                 key={feature.title}
@@ -92,7 +92,7 @@ export default function FinancePage() {
 
       <PageSection variant="muted">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-white rounded-2xl p-6 md:p-8 border border-border shadow-2xl text-center relative overflow-hidden shine-hover">
+          <div className="bg-white rounded-2xl p-4 md:p-5 border border-border shadow-2xl text-center relative overflow-hidden shine-hover">
             <div className="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-[#25D366] via-accent to-primary" />
             <SectionHeading
               badge="Free Analysis"

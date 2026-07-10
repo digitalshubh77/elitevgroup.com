@@ -26,7 +26,7 @@ export default function PageSection({
     <section
       id={id}
       className={cn(
-        "py-8 sm:py-10 md:py-12 relative overflow-hidden",
+        "py-5 sm:py-6 md:py-8 relative overflow-hidden",
         variants[variant],
         className
       )}

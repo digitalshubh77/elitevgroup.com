@@ -13,12 +13,12 @@ export default function FAQCTASection() {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   return (
-    <section className="py-8 sm:py-10 md:py-12 section-pattern relative overflow-hidden">
+    <section className="py-5 sm:py-6 md:py-8 section-pattern relative overflow-hidden">
       <div className="absolute top-10 right-20 w-64 h-64 bg-primary/5 rounded-full blur-3xl animate-aurora-1 pointer-events-none" />
       <div className="absolute bottom-10 left-20 w-80 h-80 bg-accent/5 rounded-full blur-3xl animate-aurora-2 pointer-events-none" />
 
       <Container className="relative">
-        <div className="grid lg:grid-cols-2 gap-8 lg:gap-10 items-start">
+        <div className="grid lg:grid-cols-2 gap-6 lg:gap-8 items-start">
           <div>
             <SectionHeading
               badge="FAQ"

@@ -35,7 +35,7 @@ export default function SubsidyPage() {
             title="How Much Subsidy Will You Get?"
           />
 
-          <div className="grid md:grid-cols-3 gap-4 md:gap-5 mb-8">
+          <div className="grid md:grid-cols-3 gap-3 md:gap-4 mb-5">
             {subsidyTiers.map((tier, i) => (
               <div
                 key={tier.size}
@@ -100,15 +100,15 @@ export default function SubsidyPage() {
 
       <PageSection variant="muted">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-6 md:gap-8">
+          <div className="grid lg:grid-cols-2 gap-3 md:gap-5">
             <div>
               <SectionHeading
                 badge="Important"
                 title="Important Points"
                 centered={false}
-                className="mb-6"
+                className="mb-4"
               />
-              <ul className="space-y-4">
+              <ul className="space-y-3">
                 {subsidyImportantPoints.map((point, i) => (
                   <li
                     key={point}
@@ -127,9 +127,9 @@ export default function SubsidyPage() {
                 badge="Our Support"
                 title="How We Help You Get the Subsidy"
                 centered={false}
-                className="mb-6"
+                className="mb-4"
               />
-              <ol className="space-y-4">
+              <ol className="space-y-3">
                 {subsidyHelpSteps.map((step, i) => (
                   <li
                     key={step}
@@ -150,12 +150,12 @@ export default function SubsidyPage() {
 
       <PageSection variant="white">
         <div className="max-w-3xl mx-auto px-4 text-center">
-          <div className="bg-gradient-to-br from-accent/10 to-primary/5 rounded-2xl p-6 md:p-8 border border-accent/20 shadow-xl">
+          <div className="bg-gradient-to-br from-accent/10 to-primary/5 rounded-2xl p-4 md:p-5 border border-accent/20 shadow-xl">
             <IndianRupee className="w-14 h-14 text-accent mx-auto mb-5" />
             <h3 className="text-2xl md:text-3xl font-bold text-foreground mb-4">
               Want to know your exact subsidy?
             </h3>
-            <p className="text-muted mb-8 text-lg">
+            <p className="text-muted mb-5 text-lg">
               Call or WhatsApp us — we&apos;ll calculate your subsidy based on your roof
               size and electricity usage, completely free.
             </p>

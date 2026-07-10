@@ -18,7 +18,7 @@ export default function SectionHeading({
   className,
 }: SectionHeadingProps) {
   return (
-    <div className={cn("mb-8", centered && "text-center", className)}>
+    <div className={cn("mb-6 sm:mb-7", centered && "text-center", className)}>
       {badge && (
         <span
           className={cn(

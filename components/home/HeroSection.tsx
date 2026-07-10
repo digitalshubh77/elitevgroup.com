@@ -37,10 +37,10 @@ export default function HeroSection() {
         <div className="absolute top-1/4 -left-24 w-64 h-64 bg-accent/15 rounded-full blur-[80px] animate-aurora-1 pointer-events-none z-[1]" />
         <div className="absolute bottom-1/4 -right-24 w-72 h-72 bg-solar-green/10 rounded-full blur-[80px] animate-aurora-2 pointer-events-none z-[1]" />
 
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-12 sm:pb-14 z-10 perspective-1000">
-          <div className="grid lg:grid-cols-2 gap-6 lg:gap-10 items-center">
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-[4.5rem] pb-6 sm:pb-8 z-10 perspective-1000">
+          <div className="grid lg:grid-cols-2 gap-4 lg:gap-6 items-center">
             <div className="text-center lg:text-left preserve-3d">
-              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-card-strong text-accent-light text-sm font-semibold mb-4 border border-accent/20 animate-fade-up card-3d">
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-card-strong text-accent-light text-sm font-semibold mb-3 border border-accent/20 animate-fade-up card-3d">
                 <Sparkles className="w-4 h-4 animate-pulse-glow" />
                 {company.tagline}
               </div>
@@ -52,13 +52,13 @@ export default function HeroSection() {
                 </span>
               </h1>
 
-              <p className="mt-4 text-lg md:text-xl text-white/75 max-w-xl mx-auto lg:mx-0 leading-relaxed animate-fade-up delay-200">
+              <p className="mt-3 text-lg md:text-xl text-white/75 max-w-xl mx-auto lg:mx-0 leading-relaxed animate-fade-up delay-200">
                 Save your electricity bill with government-approved rooftop solar.
                 We install solar systems for homes, shops, and industries across
                 Maharashtra.
               </p>
 
-              <div className="mt-6 flex flex-col sm:flex-row flex-wrap gap-3 justify-center lg:justify-start animate-fade-up delay-300">
+              <div className="mt-4 flex flex-col sm:flex-row flex-wrap gap-2.5 justify-center lg:justify-start animate-fade-up delay-300">
                 <Button
                   href="/contact"
                   variant="primary"
@@ -83,7 +83,7 @@ export default function HeroSection() {
                 </Button>
               </div>
 
-              <div className="mt-5 flex flex-wrap gap-3 justify-center lg:justify-start animate-fade-up delay-400">
+              <div className="mt-3 flex flex-wrap gap-2 justify-center lg:justify-start animate-fade-up delay-400">
                 {[
                   { icon: Shield, text: "Govt. Approved" },
                   { icon: Zap, text: "8 Days Install" },
@@ -107,7 +107,7 @@ export default function HeroSection() {
         </div>
 
         <div className="absolute bottom-0 left-0 right-0 z-10 pointer-events-none">
-          <svg viewBox="0 0 1440 60" fill="none" preserveAspectRatio="none" className="w-full h-8 md:h-10">
+          <svg viewBox="0 0 1440 60" fill="none" preserveAspectRatio="none" className="w-full h-6 md:h-8">
             <path d="M0 60C240 20 480 80 720 50C960 20 1200 70 1440 40V80H0V60Z" fill="#f8fafc" />
           </svg>
         </div>

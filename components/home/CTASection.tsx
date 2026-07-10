@@ -3,7 +3,7 @@ import CTACard from "@/components/home/CTACard";
 
 export default function CTASection() {
   return (
-    <section className="py-8 sm:py-10 md:py-12">
+    <section className="py-5 sm:py-6 md:py-8">
       <Container>
         <CTACard />
       </Container>

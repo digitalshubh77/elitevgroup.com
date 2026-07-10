@@ -6,7 +6,7 @@ import { getIcon } from "@/lib/icons";
 
 export default function HighlightsSection() {
   return (
-    <section className="py-8 sm:py-10 relative z-10 perspective-1000">
+    <section className="py-5 sm:py-6 relative z-10 perspective-1000">
       <Container>
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4">
           {highlights.map((item, i) => {

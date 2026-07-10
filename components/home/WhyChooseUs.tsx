@@ -7,7 +7,7 @@ import { whyChooseUs } from "@/lib/data";
 
 export default function WhyChooseUs() {
   return (
-    <section className="py-8 sm:py-10 md:py-12 hero-gradient-static relative overflow-hidden perspective-1000">
+    <section className="py-5 sm:py-6 md:py-8 hero-gradient-static relative overflow-hidden perspective-1000">
       <div className="absolute inset-0 solar-grid-bg-animated opacity-15" />
       <ParticleField count={15} variant="hero" />
 

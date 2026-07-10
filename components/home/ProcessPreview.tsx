@@ -6,7 +6,7 @@ import { processSteps } from "@/lib/data";
 
 export default function ProcessPreview() {
   return (
-    <section className="py-8 sm:py-10 md:py-12 bg-background relative overflow-hidden perspective-1000">
+    <section className="py-5 sm:py-6 md:py-8 bg-background relative overflow-hidden perspective-1000">
       <div className="absolute inset-0 section-pattern pointer-events-none" />
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-accent/5 rounded-full blur-3xl animate-pulse-glow pointer-events-none" />
 

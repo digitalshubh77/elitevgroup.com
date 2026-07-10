@@ -15,7 +15,6 @@ interface NavItemProps {
   label: string;
   enabled: boolean;
   pathname: string;
-  scrolled: boolean;
   mobile?: boolean;
 }
 
@@ -24,38 +23,12 @@ function NavItem({
   label,
   enabled,
   pathname,
-  scrolled,
   mobile,
 }: NavItemProps) {
   const isActive = pathname === href;
 
-  const activeClasses = scrolled
-    ? "text-accent nav-link-active"
-    : "text-accent-light nav-link-active";
-
-  const enabledClasses = scrolled
-    ? "text-foreground/90 hover:text-primary hover:bg-primary/5"
-    : "text-white/90 hover:text-white hover:bg-white/10";
-
-  const disabledClasses = scrolled
-    ? "text-foreground/50 cursor-not-allowed"
-    : "text-white/50 cursor-not-allowed";
-
-  const mobileActiveClasses = scrolled
-    ? "bg-accent/10 text-accent"
-    : "bg-white/10 text-accent-light";
-
-  const mobileEnabledClasses = scrolled
-    ? "text-foreground hover:bg-primary/5"
-    : "text-white/90 hover:bg-white/10";
-
-  const mobileDisabledClasses = scrolled
-    ? "text-foreground/50 cursor-not-allowed"
-    : "text-white/50 cursor-not-allowed";
-
-  const desktopClasses = mobile
-    ? ""
-    : "px-3 2xl:px-4 py-2.5 text-sm 2xl:text-base font-semibold rounded-lg whitespace-nowrap shrink-0";
+  const desktopClasses =
+    "px-3 2xl:px-4 py-2.5 text-sm 2xl:text-base font-semibold rounded-lg whitespace-nowrap shrink-0 transition-all duration-200";
 
   if (!enabled) {
     return (
@@ -65,10 +38,8 @@ function NavItem({
         title="Coming soon"
         className={cn(
           mobile
-            ? "block px-4 py-3.5 rounded-xl text-base font-semibold select-none"
-            : desktopClasses,
-          "select-none",
-          mobile ? mobileDisabledClasses : disabledClasses
+            ? "block px-4 py-3.5 rounded-xl text-base font-semibold select-none text-foreground/50 cursor-not-allowed"
+            : cn(desktopClasses, "text-foreground/50 cursor-not-allowed select-none")
         )}
       >
         {label}
@@ -81,15 +52,18 @@ function NavItem({
       href={href}
       className={cn(
         mobile
-          ? "block px-4 py-3.5 rounded-xl text-base font-semibold transition-colors"
-          : cn(desktopClasses, "transition-all duration-200"),
-        isActive
-          ? mobile
-            ? mobileActiveClasses
-            : activeClasses
-          : mobile
-            ? mobileEnabledClasses
-            : enabledClasses
+          ? cn(
+              "block px-4 py-3.5 rounded-xl text-base font-semibold transition-colors",
+              isActive
+                ? "bg-accent/10 text-accent"
+                : "text-foreground hover:bg-primary/5"
+            )
+          : cn(
+              desktopClasses,
+              isActive
+                ? "text-accent nav-link-active"
+                : "text-foreground/90 hover:text-primary hover:bg-primary/5"
+            )
       )}
     >
       {label}
@@ -100,29 +74,14 @@ function NavItem({
 export default function Navbar() {
   const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 16);
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
 
   useEffect(() => {
     setIsOpen(false);
   }, [pathname]);
 
   return (
-    <header
-      className={cn(
-        "fixed top-0 left-0 right-0 z-50 w-full transition-all duration-300",
-        scrolled
-          ? "bg-white/95 backdrop-blur-md shadow-lg shadow-primary/5 py-2.5"
-          : "bg-transparent py-3.5 sm:py-4"
-      )}
-    >
+    <header className="fixed top-0 left-0 right-0 z-50 w-full bg-white shadow-md shadow-primary/5 py-2.5 transition-all duration-300">
       <nav className="w-full max-w-[100vw] px-4 sm:px-6 lg:px-10">
-        {/* 3-column grid: logo | nav links | actions — prevents overlap */}
         <div className="grid grid-cols-[auto_1fr_auto] items-center gap-4 xl:gap-5">
           <Link href="/" className="flex items-center gap-3 shrink-0 min-w-0">
             <div className="relative w-12 h-12 rounded-xl overflow-hidden shadow-lg shrink-0">
@@ -135,26 +94,15 @@ export default function Navbar() {
               />
             </div>
             <div className="hidden lg:block min-w-0">
-              <p
-                className={cn(
-                  "font-extrabold text-xl xl:text-2xl leading-tight transition-colors truncate",
-                  scrolled ? "text-primary" : "text-white"
-                )}
-              >
+              <p className="font-extrabold text-xl xl:text-2xl leading-tight text-primary truncate">
                 {company.shortName}
               </p>
-              <p
-                className={cn(
-                  "text-sm xl:text-base font-semibold tracking-wide truncate hidden xl:block",
-                  scrolled ? "text-accent" : "text-accent-light"
-                )}
-              >
+              <p className="text-sm xl:text-base font-semibold tracking-wide text-accent truncate hidden xl:block">
                 {company.tagline}
               </p>
             </div>
           </Link>
 
-          {/* Center nav — grouped with gap, never stretches into actions */}
           <div className="hidden xl:flex items-center justify-center gap-1 2xl:gap-2 min-w-0 overflow-x-auto scrollbar-hide">
             {navLinks.map((link) => (
               <NavItem
@@ -163,45 +111,35 @@ export default function Navbar() {
                 label={link.label}
                 enabled={link.enabled}
                 pathname={pathname}
-                scrolled={scrolled}
               />
             ))}
           </div>
 
-          {/* Right actions — fixed width, never overlapped */}
-          <div className="flex items-center gap-3 shrink-0 justify-end">
-            <div className="hidden xl:flex items-center gap-3 shrink-0">
+          <div className="flex items-center gap-2 shrink-0 justify-end">
+            <div className="hidden xl:flex items-center gap-2 shrink-0">
               <a
                 href={`tel:+91${company.phone}`}
                 title={`Call ${company.phoneDisplay}`}
-                className={cn(
-                  "flex items-center gap-1.5 text-sm 2xl:text-base font-bold transition-colors whitespace-nowrap shrink-0",
-                  scrolled ? "text-primary" : "text-white"
-                )}
+                className="inline-flex items-center justify-center gap-2 px-3 py-2.5 rounded-xl bg-primary/5 border border-primary/15 text-primary font-bold text-sm hover:bg-primary/10 transition-colors whitespace-nowrap shrink-0"
               >
-                <Phone className="w-4 h-4 2xl:w-5 2xl:h-5 text-accent shrink-0" />
-                <span className="hidden 2xl:inline">{company.phoneDisplay}</span>
+                <Phone className="w-4 h-4 text-accent shrink-0" />
+                <span>{company.phoneDisplay}</span>
               </a>
               <Button
                 href={`https://wa.me/91${company.whatsapp}`}
                 external
                 variant="whatsapp"
-                size="lg"
-                className="shrink-0 !px-3 2xl:!px-5"
+                size="md"
+                className="shrink-0 !px-4 !py-2.5"
               >
-                <WhatsAppIcon className="w-4 h-4 2xl:w-5 2xl:h-5 shrink-0" />
-                <span className="hidden 2xl:inline">WhatsApp</span>
+                <WhatsAppIcon className="w-4 h-4 shrink-0" />
+                WhatsApp
               </Button>
             </div>
 
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className={cn(
-                "xl:hidden p-2 rounded-lg transition-colors shrink-0",
-                scrolled
-                  ? "text-primary hover:bg-primary/5"
-                  : "text-white hover:bg-white/10"
-              )}
+              className="xl:hidden p-2 rounded-lg text-primary hover:bg-primary/5 transition-colors shrink-0"
               aria-label="Toggle menu"
             >
               {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -211,12 +149,7 @@ export default function Navbar() {
 
         {isOpen && (
           <div className="xl:hidden mt-3 pb-2 animate-fade-up">
-            <div
-              className={cn(
-                "rounded-xl p-3 space-y-0.5 shadow-xl max-h-[70vh] overflow-y-auto",
-                scrolled ? "bg-white border border-border" : "glass-card"
-              )}
-            >
+            <div className="rounded-xl p-3 space-y-0.5 shadow-xl max-h-[70vh] overflow-y-auto bg-white border border-border">
               {navLinks.map((link) => (
                 <NavItem
                   key={link.href}
@@ -224,17 +157,13 @@ export default function Navbar() {
                   label={link.label}
                   enabled={link.enabled}
                   pathname={pathname}
-                  scrolled={scrolled}
                   mobile
                 />
               ))}
-              <div className="pt-3 mt-1 border-t border-white/10 space-y-2">
+              <div className="pt-3 mt-1 border-t border-border space-y-2">
                 <a
                   href={`tel:+91${company.phone}`}
-                  className={cn(
-                    "flex items-center gap-2 px-4 py-3 text-base font-bold",
-                    scrolled ? "text-primary" : "text-white"
-                  )}
+                  className="flex items-center gap-2 px-4 py-3 text-base font-bold text-primary"
                 >
                   <Phone className="w-5 h-5 text-accent" />
                   Call {company.phoneDisplay}

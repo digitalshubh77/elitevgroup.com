@@ -7,7 +7,7 @@ import { subsidyTiers } from "@/lib/data";
 
 export default function SubsidySection() {
   return (
-    <section className="py-8 sm:py-10 md:py-12 section-pattern relative overflow-hidden perspective-1000">
+    <section className="py-5 sm:py-6 md:py-8 section-pattern relative overflow-hidden perspective-1000">
       <div className="absolute top-20 left-10 w-72 h-72 bg-accent/10 rounded-full blur-3xl animate-aurora-1 pointer-events-none" />
       <div className="absolute bottom-10 right-10 w-96 h-96 bg-primary/8 rounded-full blur-3xl animate-aurora-2 pointer-events-none" />
       <div className="absolute inset-0 dot-pattern opacity-50 pointer-events-none" />

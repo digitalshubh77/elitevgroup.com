@@ -30,7 +30,7 @@ export default function ContactForm() {
 
   if (submitted) {
     return (
-      <div className="bg-white rounded-2xl p-8 md:p-10 shadow-xl border border-border text-center card-3d relative overflow-hidden">
+      <div className="bg-white rounded-2xl p-6 md:p-8 shadow-xl border border-border text-center card-3d relative overflow-hidden">
         <div className="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-solar-green via-accent to-primary" />
         <div className="w-20 h-20 rounded-full bg-solar-green/10 flex items-center justify-center mx-auto mb-5 animate-count-pop">
           <CheckCircle className="w-10 h-10 text-solar-green" />
@@ -53,7 +53,7 @@ export default function ContactForm() {
   return (
     <form
       onSubmit={handleSubmit}
-      className="bg-white rounded-2xl p-6 md:p-8 shadow-xl border border-border space-y-5 card-3d relative overflow-hidden"
+      className="bg-white rounded-2xl p-5 md:p-6 shadow-xl border border-border space-y-4 card-3d relative overflow-hidden"
     >
       <div className="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-primary via-accent to-solar-green" />
 

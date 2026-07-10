@@ -72,15 +72,15 @@ export default function AboutPage() {
 
       <PageSection variant="white" className="perspective-1000">
         <Container>
-          <div className="grid lg:grid-cols-2 gap-8 xl:gap-12 items-center">
+          <div className="grid lg:grid-cols-2 gap-5 lg:gap-8 items-center">
             <ScrollReveal direction="left">
               <SectionHeading
                 badge="Our Story"
                 title="Your Trusted Solar Partner"
                 centered={false}
-                className="mb-6"
+                className="mb-4"
               />
-              <div className="space-y-4 text-muted leading-relaxed">
+              <div className="space-y-3 text-muted leading-relaxed">
                 <p>
                   {company.name} is a solar installation company based in
                   Barshi, Dist. Solapur, Maharashtra. We started in{" "}
@@ -104,7 +104,7 @@ export default function AboutPage() {
                 </p>
               </div>
 
-              <ul className="mt-6 grid sm:grid-cols-2 gap-3">
+              <ul className="mt-4 grid sm:grid-cols-2 gap-3">
                 {milestones.map((item) => (
                   <li
                     key={item}
@@ -117,11 +117,11 @@ export default function AboutPage() {
               </ul>
             </ScrollReveal>
 
-            <div className="grid grid-cols-2 gap-4 md:gap-5">
+            <div className="grid grid-cols-2 gap-3 md:gap-4">
               {quickFacts.map((fact, i) => (
                 <ScrollReveal key={fact.label} delay={i * 80}>
                   <TiltCard innerClassName="h-full">
-                    <div className="stat-card card-3d rounded-2xl p-5 md:p-6 border border-border shadow-xl text-center h-full shine-hover">
+                    <div className="stat-card card-3d rounded-2xl p-4 md:p-5 border border-border shadow-xl text-center h-full shine-hover">
                       <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-primary/10 to-accent/10 flex items-center justify-center mx-auto mb-4">
                         <fact.icon className="w-7 h-7 text-primary" />
                       </div>
@@ -149,11 +149,11 @@ export default function AboutPage() {
             />
           </ScrollReveal>
 
-          <div className="grid md:grid-cols-3 gap-4 md:gap-6">
+          <div className="grid md:grid-cols-3 gap-3 md:gap-5">
             {pillars.map((pillar, i) => (
               <ScrollReveal key={pillar.title} delay={i * 100}>
                 <TiltCard maxTilt={8} innerClassName="h-full">
-                  <div className="glass-card-strong rounded-2xl p-6 md:p-8 card-3d shine-hover h-full text-center">
+                  <div className="glass-card-strong rounded-2xl p-4 md:p-5 card-3d shine-hover h-full text-center">
                     <div className="w-16 h-16 rounded-2xl bg-accent/20 flex items-center justify-center mx-auto mb-5">
                       <pillar.icon className="w-8 h-8 text-accent-light" />
                     </div>
@@ -179,11 +179,11 @@ export default function AboutPage() {
             />
           </ScrollReveal>
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-5">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-3 md:gap-4">
             {founders.map((founder, i) => (
               <ScrollReveal key={founder} delay={i * 80}>
                 <TiltCard innerClassName="h-full">
-                  <div className="bg-white rounded-2xl p-6 md:p-8 border border-border shadow-xl card-3d shine-hover text-center h-full">
+                  <div className="bg-white rounded-2xl p-4 md:p-5 border border-border shadow-xl card-3d shine-hover text-center h-full">
                     <div className="w-20 h-20 rounded-full bg-gradient-to-br from-primary to-primary-dark flex items-center justify-center mx-auto mb-5 shadow-lg shadow-primary/20">
                       <Users className="w-10 h-10 text-accent-light" />
                     </div>
@@ -206,7 +206,7 @@ export default function AboutPage() {
           <ScrollReveal>
             <div className="max-w-4xl mx-auto">
               <TiltCard maxTilt={6}>
-                <div className="hero-gradient-static rounded-2xl p-6 md:p-10 text-white relative overflow-hidden shadow-2xl shadow-primary/20 card-3d">
+                <div className="hero-gradient-static rounded-2xl p-5 md:p-8 text-white relative overflow-hidden shadow-2xl shadow-primary/20 card-3d">
                   <div className="absolute inset-0 solar-grid-bg-animated opacity-15" />
                   <div className="absolute top-0 right-0 w-64 h-64 bg-accent/20 rounded-full blur-3xl animate-aurora-1" />
                   <Target className="w-14 h-14 text-accent-light mx-auto mb-5 relative" />
@@ -216,7 +216,7 @@ export default function AboutPage() {
                   <p className="text-white/80 relative leading-relaxed text-center text-lg">
                     {company.address}
                   </p>
-                  <div className="text-center mt-8 relative flex flex-col sm:flex-row gap-3 justify-center">
+                  <div className="text-center mt-5 relative flex flex-col sm:flex-row gap-3 justify-center">
                     <Button href={company.mapLink} external variant="primary" size="lg">
                       <MapPin className="w-5 h-5" />
                       View on Google Maps

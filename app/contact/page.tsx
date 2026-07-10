@@ -16,7 +16,6 @@ import {
   Gift,
   ExternalLink,
   Clock,
-  MessageCircle,
 } from "lucide-react";
 import { FacebookIcon, InstagramIcon, WhatsAppIcon } from "@/components/ui/SocialIcons";
 
@@ -64,7 +63,7 @@ export default function ContactPage() {
 
       <PageSection variant="white" className="perspective-1000">
         <Container>
-          <div className="grid sm:grid-cols-3 gap-4 mb-8 md:mb-10">
+          <div className="grid sm:grid-cols-3 gap-4 mb-5 md:mb-6">
             {quickActions.map((action, i) => (
               <ScrollReveal key={action.label} delay={i * 80}>
                 <TiltCard innerClassName="h-full">
@@ -72,7 +71,7 @@ export default function ContactPage() {
                     href={action.href}
                     target={action.external ? "_blank" : undefined}
                     rel={action.external ? "noopener noreferrer" : undefined}
-                    className="block bg-white rounded-2xl p-5 md:p-6 border border-border shadow-lg card-3d shine-hover h-full group"
+                    className="block bg-white rounded-2xl p-4 md:p-5 border border-border shadow-lg card-3d shine-hover h-full group"
                   >
                     <div
                       className={`w-14 h-14 rounded-2xl bg-gradient-to-br ${action.color} flex items-center justify-center mb-4 group-hover:scale-110 transition-transform`}
@@ -89,17 +88,17 @@ export default function ContactPage() {
             ))}
           </div>
 
-          <div className="grid lg:grid-cols-5 gap-6 lg:gap-8">
-            <div className="lg:col-span-2 space-y-5">
+          <div className="grid lg:grid-cols-5 gap-4 lg:gap-6">
+            <div className="lg:col-span-2 space-y-3">
               <ScrollReveal direction="left">
                 <TiltCard innerClassName="h-full">
-                  <div className="bg-white rounded-2xl p-6 md:p-8 border border-border shadow-xl card-3d relative overflow-hidden h-full">
+                  <div className="bg-white rounded-2xl p-4 md:p-5 border border-border shadow-xl card-3d relative overflow-hidden h-full">
                     <div className="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-primary via-accent to-solar-green" />
-                    <h3 className="text-xl font-bold text-foreground mb-6 flex items-center gap-2">
+                    <h3 className="text-xl font-bold text-foreground mb-4 flex items-center gap-2">
                       <MapPin className="w-5 h-5 text-accent" />
                       Contact Details
                     </h3>
-                    <ul className="space-y-4">
+                    <ul className="space-y-3">
                       <li className="flex items-start gap-4 p-3 rounded-xl hover:bg-background transition-colors card-3d">
                         <div className="w-11 h-11 rounded-xl bg-primary/10 flex items-center justify-center shrink-0">
                           <MapPin className="w-5 h-5 text-primary" />
@@ -149,7 +148,7 @@ export default function ContactPage() {
                       </li>
                     </ul>
 
-                    <div className="mt-6 pt-6 border-t border-border flex items-center gap-3">
+                    <div className="mt-4 pt-6 border-t border-border flex items-center gap-3">
                       <Clock className="w-5 h-5 text-accent shrink-0" />
                       <div>
                         <p className="font-semibold text-foreground text-sm">Service Area</p>
@@ -157,7 +156,7 @@ export default function ContactPage() {
                       </div>
                     </div>
 
-                    <div className="mt-6 flex gap-3">
+                    <div className="mt-4 flex gap-3">
                       <a
                         href={company.facebook}
                         target="_blank"
@@ -192,45 +191,13 @@ export default function ContactPage() {
                       external
                       variant="secondary"
                       size="md"
-                      className="w-full mt-6"
+                      className="w-full mt-4"
                     >
                       <ExternalLink className="w-4 h-4" />
                       View on Google Maps
                     </Button>
                   </div>
                 </TiltCard>
-              </ScrollReveal>
-
-              <ScrollReveal direction="left" delay={100}>
-                <div className="bg-gradient-to-br from-accent/10 via-accent/5 to-primary/5 rounded-2xl p-6 md:p-7 border border-accent/20 shadow-lg card-3d">
-                  <div className="flex items-center gap-2 mb-5">
-                    <Gift className="w-5 h-5 text-accent" />
-                    <h3 className="font-bold text-foreground text-lg">100% Free Services</h3>
-                  </div>
-                  <ul className="space-y-2.5">
-                    {freeServices.map((service) => (
-                      <li
-                        key={service}
-                        className="text-sm text-muted flex items-center gap-3 bg-white/70 rounded-xl px-4 py-3 border border-white/50"
-                      >
-                        <span className="w-2 h-2 rounded-full bg-solar-green shrink-0" />
-                        {service}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </ScrollReveal>
-
-              <ScrollReveal direction="left" delay={200}>
-                <a
-                  href={`https://wa.me/91${company.whatsapp}?text=Hi Elite Ventures, I want a free solar consultation.`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center justify-center gap-3 w-full py-4 rounded-2xl bg-[#25D366] text-white font-bold shadow-xl shadow-[#25D366]/30 hover:bg-[#20bd5a] card-3d transition-all duration-300"
-                >
-                  <WhatsAppIcon className="w-6 h-6" />
-                  Chat on WhatsApp Now
-                </a>
               </ScrollReveal>
             </div>
 
@@ -240,31 +207,56 @@ export default function ContactPage() {
               </ScrollReveal>
             </div>
           </div>
-        </Container>
-      </PageSection>
 
-      <PageSection variant="muted" className="perspective-1000 pb-10 md:pb-14">
-        <Container>
-          <ScrollReveal>
-            <div className="flex items-center gap-3 mb-5">
-              <MessageCircle className="w-6 h-6 text-accent" />
-              <h3 className="text-xl font-bold text-foreground">Find Us on Map</h3>
-            </div>
-            <div className="rounded-2xl overflow-hidden shadow-2xl border border-border h-64 md:h-96 relative card-3d">
-              <div className="absolute top-4 left-4 z-10 glass-card-strong rounded-xl px-4 py-2.5 flex items-center gap-2">
-                <MapPin className="w-4 h-4 text-accent" />
-                <span className="text-white text-sm font-semibold">Our Office — Barshi</span>
+          <ScrollReveal delay={150}>
+            <div className="grid md:grid-cols-[3fr_7fr] gap-3 items-stretch mt-4 lg:mt-5">
+              <div className="space-y-3 flex flex-col min-w-0">
+                <div className="bg-gradient-to-br from-accent/10 via-accent/5 to-primary/5 rounded-2xl p-5 md:p-6 border border-accent/20 shadow-lg card-3d flex-1">
+                  <div className="flex items-center gap-2 mb-4">
+                    <Gift className="w-5 h-5 text-accent" />
+                    <h3 className="font-bold text-foreground text-lg">100% Free Services</h3>
+                  </div>
+                  <ul className="space-y-2">
+                    {freeServices.map((service) => (
+                      <li
+                        key={service}
+                        className="text-sm text-muted flex items-center gap-3 bg-white/70 rounded-xl px-4 py-2.5 border border-white/50"
+                      >
+                        <span className="w-2 h-2 rounded-full bg-solar-green shrink-0" />
+                        {service}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+                <a
+                  href={`https://wa.me/91${company.whatsapp}?text=Hi Elite Ventures, I want a free solar consultation.`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center justify-center gap-3 w-full py-3.5 rounded-2xl bg-[#25D366] text-white font-bold shadow-xl shadow-[#25D366]/30 hover:bg-[#20bd5a] card-3d transition-all duration-300"
+                >
+                  <WhatsAppIcon className="w-6 h-6" />
+                  Chat on WhatsApp Now
+                </a>
               </div>
-              <iframe
-                src="https://maps.google.com/maps?q=C/o+K+T+Tractors,+Latur+Road,+Barshi,+Dist.+Solapur,+Maharashtra+413401&output=embed"
-                width="100%"
-                height="100%"
-                style={{ border: 0 }}
-                allowFullScreen
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-                title="Elite Ventures Office Location"
-              />
+
+              <div className="rounded-2xl overflow-hidden shadow-xl border border-border min-h-[240px] md:min-h-[300px] h-full relative card-3d">
+                <div className="absolute top-3 left-3 z-10 bg-white/95 backdrop-blur-sm rounded-lg px-3 py-1.5 flex items-center gap-2 shadow-md">
+                  <MapPin className="w-4 h-4 text-accent" />
+                  <span className="text-foreground text-xs font-semibold">Our Office — Barshi</span>
+                </div>
+                <iframe
+                  src="https://maps.google.com/maps?q=C/o+K+T+Tractors,+Latur+Road,+Barshi,+Dist.+Solapur,+Maharashtra+413401&output=embed"
+                  width="100%"
+                  height="100%"
+                  className="absolute inset-0 w-full h-full"
+                  style={{ border: 0 }}
+                  allowFullScreen
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  title="Elite Ventures Office Location"
+                />
+              </div>
             </div>
           </ScrollReveal>
         </Container>

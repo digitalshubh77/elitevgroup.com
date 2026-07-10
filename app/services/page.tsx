@@ -22,13 +22,13 @@ export default function ServicesPage() {
       />
 
       <PageSection variant="white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-5">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-3">
           {services.map((service, i) => {
             const Icon = getIcon(service.icon);
             return (
               <div
                 key={service.slug}
-                className={`group relative flex flex-col md:flex-row gap-5 md:gap-8 items-start bg-white rounded-2xl p-5 md:p-7 border border-border shadow-xl card-hover card-glow shine-hover overflow-hidden ${
+                className={`group relative flex flex-col md:flex-row gap-5 md:gap-8 items-start bg-white rounded-2xl p-4 md:p-6 border border-border shadow-xl card-hover card-glow shine-hover overflow-hidden ${
                   i % 2 === 1 ? "md:flex-row-reverse" : ""
                 }`}
               >
@@ -61,7 +61,7 @@ export default function ServicesPage() {
             title="System Sizes We Install"
             subtitle="We design and install solar systems tailored to your electricity consumption and roof space."
           />
-          <div className="flex flex-wrap justify-center gap-4 md:gap-5">
+          <div className="flex flex-wrap justify-center gap-3 md:gap-4">
             {systemSizes.map((size, i) => (
               <div
                 key={size}

@@ -9,7 +9,7 @@ import { getIcon } from "@/lib/icons";
 
 export default function ServicesPreview() {
   return (
-    <section className="py-8 sm:py-10 md:py-12 bg-white relative overflow-hidden perspective-1000">
+    <section className="py-5 sm:py-6 md:py-8 bg-white relative overflow-hidden perspective-1000">
       <div className="absolute inset-0 dot-pattern opacity-40 pointer-events-none" />
       <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-accent/5 rounded-full blur-3xl animate-aurora-1 pointer-events-none" />
       <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-primary/5 rounded-full blur-3xl animate-aurora-2 pointer-events-none" />
