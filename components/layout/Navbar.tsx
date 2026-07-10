@@ -55,7 +55,7 @@ function NavItem({
 
   const desktopClasses = mobile
     ? ""
-    : "px-2.5 2xl:px-3 py-2 text-sm 2xl:text-base font-semibold rounded-lg whitespace-nowrap shrink-0";
+    : "px-3 2xl:px-4 py-2.5 text-sm 2xl:text-base font-semibold rounded-lg whitespace-nowrap shrink-0";
 
   if (!enabled) {
     return (
@@ -117,15 +117,15 @@ export default function Navbar() {
       className={cn(
         "fixed top-0 left-0 right-0 z-50 w-full transition-all duration-300",
         scrolled
-          ? "bg-white/95 backdrop-blur-md shadow-lg shadow-primary/5 py-2"
-          : "bg-transparent py-3"
+          ? "bg-white/95 backdrop-blur-md shadow-lg shadow-primary/5 py-2.5"
+          : "bg-transparent py-3.5 sm:py-4"
       )}
     >
-      <nav className="w-full max-w-[100vw] px-4 sm:px-6 lg:px-8">
+      <nav className="w-full max-w-[100vw] px-4 sm:px-6 lg:px-10">
         {/* 3-column grid: logo | nav links | actions — prevents overlap */}
-        <div className="grid grid-cols-[auto_1fr_auto] items-center gap-3 xl:gap-4">
-          <Link href="/" className="flex items-center gap-2.5 shrink-0 min-w-0">
-            <div className="relative w-10 h-10 sm:w-11 sm:h-11 rounded-xl overflow-hidden shadow-lg shrink-0">
+        <div className="grid grid-cols-[auto_1fr_auto] items-center gap-4 xl:gap-5">
+          <Link href="/" className="flex items-center gap-3 shrink-0 min-w-0">
+            <div className="relative w-12 h-12 rounded-xl overflow-hidden shadow-lg shrink-0">
               <Image
                 src="/logo.svg"
                 alt={`${company.shortName} logo`}
@@ -137,7 +137,7 @@ export default function Navbar() {
             <div className="hidden lg:block min-w-0">
               <p
                 className={cn(
-                  "font-extrabold text-lg xl:text-xl leading-tight transition-colors truncate",
+                  "font-extrabold text-xl xl:text-2xl leading-tight transition-colors truncate",
                   scrolled ? "text-primary" : "text-white"
                 )}
               >
@@ -145,7 +145,7 @@ export default function Navbar() {
               </p>
               <p
                 className={cn(
-                  "text-xs xl:text-sm font-semibold tracking-wide truncate hidden xl:block",
+                  "text-sm xl:text-base font-semibold tracking-wide truncate hidden xl:block",
                   scrolled ? "text-accent" : "text-accent-light"
                 )}
               >
@@ -155,7 +155,7 @@ export default function Navbar() {
           </Link>
 
           {/* Center nav — grouped with gap, never stretches into actions */}
-          <div className="hidden xl:flex items-center justify-center gap-0.5 2xl:gap-1 min-w-0 overflow-x-auto scrollbar-hide">
+          <div className="hidden xl:flex items-center justify-center gap-1 2xl:gap-2 min-w-0 overflow-x-auto scrollbar-hide">
             {navLinks.map((link) => (
               <NavItem
                 key={link.href}
@@ -169,8 +169,8 @@ export default function Navbar() {
           </div>
 
           {/* Right actions — fixed width, never overlapped */}
-          <div className="flex items-center gap-2 shrink-0 justify-end">
-            <div className="hidden xl:flex items-center gap-2 shrink-0">
+          <div className="flex items-center gap-3 shrink-0 justify-end">
+            <div className="hidden xl:flex items-center gap-3 shrink-0">
               <a
                 href={`tel:+91${company.phone}`}
                 title={`Call ${company.phoneDisplay}`}
@@ -186,7 +186,7 @@ export default function Navbar() {
                 href={`https://wa.me/91${company.whatsapp}`}
                 external
                 variant="whatsapp"
-                size="md"
+                size="lg"
                 className="shrink-0 !px-3 2xl:!px-5"
               >
                 <WhatsAppIcon className="w-4 h-4 2xl:w-5 2xl:h-5 shrink-0" />
