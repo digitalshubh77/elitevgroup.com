@@ -5,8 +5,7 @@ import ServicesPreview from "@/components/home/ServicesPreview";
 import WhyChooseUs from "@/components/home/WhyChooseUs";
 import ProcessPreview from "@/components/home/ProcessPreview";
 import CalculatorSection from "@/components/home/CalculatorSection";
-import FAQSection from "@/components/home/FAQSection";
-import CTASection from "@/components/home/CTASection";
+import FAQCTASection from "@/components/home/FAQCTASection";
 
 export default function Home() {
   return (
@@ -18,8 +17,7 @@ export default function Home() {
       <CalculatorSection />
       <WhyChooseUs />
       <ProcessPreview />
-      <FAQSection />
-      <CTASection />
+      <FAQCTASection />
     </>
   );
 }

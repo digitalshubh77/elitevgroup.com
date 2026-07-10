@@ -18,13 +18,7 @@ export default function SectionHeading({
   className,
 }: SectionHeadingProps) {
   return (
-    <div
-      className={cn(
-        "mb-8",
-        centered && "text-center",
-        className
-      )}
-    >
+    <div className={cn("mb-8", centered && "text-center", className)}>
       {badge && (
         <span
           className={cn(
@@ -39,7 +33,7 @@ export default function SectionHeading({
       )}
       <h2
         className={cn(
-          "text-2xl md:text-3xl lg:text-4xl font-bold tracking-tight leading-snug",
+          "text-2xl md:text-3xl lg:text-4xl font-bold tracking-tight leading-tight",
           light ? "text-white" : "text-foreground"
         )}
       >

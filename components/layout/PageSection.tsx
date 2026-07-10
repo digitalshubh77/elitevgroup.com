@@ -26,21 +26,21 @@ export default function PageSection({
     <section
       id={id}
       className={cn(
-        "py-10 md:py-14 relative overflow-hidden",
+        "py-8 sm:py-10 md:py-12 relative overflow-hidden",
         variants[variant],
         className
       )}
     >
       {variant === "muted" && (
         <>
-          <div className="absolute top-10 left-10 w-72 h-72 bg-accent/5 rounded-full blur-3xl animate-aurora-1 pointer-events-none" />
-          <div className="absolute bottom-10 right-10 w-96 h-96 bg-primary/5 rounded-full blur-3xl animate-aurora-2 pointer-events-none" />
+          <div className="absolute top-6 left-6 w-48 h-48 bg-accent/5 rounded-full blur-3xl animate-aurora-1 pointer-events-none" />
+          <div className="absolute bottom-6 right-6 w-56 h-56 bg-primary/5 rounded-full blur-3xl animate-aurora-2 pointer-events-none" />
         </>
       )}
       {variant === "pattern" && (
         <>
-          <div className="absolute inset-0 dot-pattern opacity-40 pointer-events-none" />
-          <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-accent/5 rounded-full blur-3xl animate-aurora-1 pointer-events-none" />
+          <div className="absolute inset-0 dot-pattern opacity-30 pointer-events-none" />
+          <div className="absolute top-0 right-0 w-64 h-64 bg-accent/5 rounded-full blur-3xl animate-aurora-1 pointer-events-none" />
         </>
       )}
       <div className="relative">{children}</div>

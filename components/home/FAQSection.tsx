@@ -10,7 +10,7 @@ export default function FAQSection() {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   return (
-    <section className="py-12 md:py-16 section-pattern relative overflow-hidden">
+    <section className="py-6 sm:py-8 md:py-10 section-pattern relative overflow-hidden">
       <div className="absolute top-10 right-20 w-64 h-64 bg-primary/5 rounded-full blur-3xl animate-aurora-1 pointer-events-none" />
       <div className="absolute bottom-10 left-20 w-80 h-80 bg-accent/5 rounded-full blur-3xl animate-aurora-2 pointer-events-none" />
 

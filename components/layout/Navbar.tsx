@@ -61,8 +61,8 @@ function NavItem({
         title="Coming soon"
         className={cn(
           mobile
-            ? "block px-4 py-3 rounded-xl text-sm font-medium select-none"
-            : "px-3 py-2 text-sm font-medium rounded-lg select-none",
+            ? "block px-4 py-4 rounded-xl text-lg font-semibold select-none"
+            : "px-2 xl:px-3 py-2 text-base xl:text-lg font-semibold rounded-lg select-none whitespace-nowrap",
           mobile ? mobileDisabledClasses : disabledClasses
         )}
       >
@@ -76,8 +76,8 @@ function NavItem({
       href={href}
       className={cn(
         mobile
-          ? "block px-4 py-3 rounded-xl text-sm font-medium transition-colors"
-          : "px-3 py-2 text-sm font-medium rounded-lg transition-all duration-200",
+          ? "block px-4 py-4 rounded-xl text-lg font-semibold transition-colors"
+          : "px-2 xl:px-3 py-2 text-base xl:text-lg font-semibold rounded-lg transition-all duration-200 whitespace-nowrap",
         isActive
           ? mobile
             ? mobileActiveClasses
@@ -98,7 +98,7 @@ export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 20);
+    const handleScroll = () => setScrolled(window.scrollY > 16);
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
@@ -110,16 +110,16 @@ export default function Navbar() {
   return (
     <header
       className={cn(
-        "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
+        "fixed top-0 left-0 right-0 z-50 w-full transition-all duration-300",
         scrolled
-          ? "bg-white/95 backdrop-blur-md shadow-lg shadow-primary/5 py-1.5"
-          : "bg-transparent py-3"
+          ? "bg-white/95 backdrop-blur-md shadow-lg shadow-primary/5 py-2"
+          : "bg-transparent py-3 sm:py-3.5"
       )}
     >
-      <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between">
-          <Link href="/" className="flex items-center gap-3 group">
-            <div className="relative w-10 h-10 sm:w-12 sm:h-12 rounded-xl overflow-hidden shadow-lg group-hover:scale-105 transition-transform">
+      <nav className="w-full px-4 sm:px-6 lg:px-8 xl:px-10">
+        <div className="flex items-center w-full gap-4 xl:gap-6">
+          <Link href="/" className="flex items-center gap-3 shrink-0">
+            <div className="relative w-11 h-11 sm:w-12 sm:h-12 rounded-xl overflow-hidden shadow-lg group-hover:scale-105 transition-transform">
               <Image
                 src="/logo.svg"
                 alt={`${company.shortName} logo`}
@@ -128,10 +128,10 @@ export default function Navbar() {
                 priority
               />
             </div>
-            <div className="hidden sm:block">
+            <div className="hidden md:block">
               <p
                 className={cn(
-                  "font-bold text-lg leading-tight transition-colors",
+                  "font-extrabold text-xl xl:text-2xl leading-tight transition-colors whitespace-nowrap",
                   scrolled ? "text-primary" : "text-white"
                 )}
               >
@@ -139,7 +139,7 @@ export default function Navbar() {
               </p>
               <p
                 className={cn(
-                  "text-xs font-medium tracking-wider",
+                  "text-sm xl:text-base font-semibold tracking-wider whitespace-nowrap",
                   scrolled ? "text-accent" : "text-accent-light"
                 )}
               >
@@ -148,7 +148,7 @@ export default function Navbar() {
             </div>
           </Link>
 
-          <div className="hidden xl:flex items-center gap-1">
+          <div className="hidden xl:flex flex-1 items-center justify-between px-4 2xl:px-8 min-w-0">
             {navLinks.map((link) => (
               <NavItem
                 key={link.href}
@@ -161,24 +161,25 @@ export default function Navbar() {
             ))}
           </div>
 
-          <div className="hidden lg:flex items-center gap-3">
+          <div className="hidden xl:flex items-center gap-3 shrink-0 ml-auto">
             <a
               href={`tel:+91${company.phone}`}
               className={cn(
-                "flex items-center gap-2 text-sm font-semibold transition-colors",
+                "flex items-center gap-2 text-base xl:text-lg font-bold transition-colors whitespace-nowrap",
                 scrolled ? "text-primary" : "text-white"
               )}
             >
-              <Phone className="w-4 h-4 text-accent" />
+              <Phone className="w-5 h-5 text-accent shrink-0" />
               {company.phoneDisplay}
             </a>
             <Button
               href={`https://wa.me/91${company.whatsapp}`}
               external
               variant="whatsapp"
-              size="sm"
+              size="lg"
+              className="shrink-0"
             >
-              <WhatsAppIcon className="w-4 h-4" />
+              <WhatsAppIcon className="w-5 h-5" />
               WhatsApp
             </Button>
           </div>
@@ -186,7 +187,7 @@ export default function Navbar() {
           <button
             onClick={() => setIsOpen(!isOpen)}
             className={cn(
-              "lg:hidden p-2 rounded-lg transition-colors",
+              "xl:hidden p-2 rounded-lg transition-colors shrink-0 ml-auto",
               scrolled
                 ? "text-primary hover:bg-primary/5"
                 : "text-white hover:bg-white/10"
@@ -198,10 +199,10 @@ export default function Navbar() {
         </div>
 
         {isOpen && (
-          <div className="lg:hidden mt-4 pb-4 animate-fade-up">
+          <div className="xl:hidden mt-3 pb-2 animate-fade-up">
             <div
               className={cn(
-                "rounded-2xl p-4 space-y-1 shadow-xl",
+                "rounded-xl p-3 space-y-1 shadow-xl max-h-[70vh] overflow-y-auto",
                 scrolled ? "bg-white border border-border" : "glass-card"
               )}
             >
@@ -216,25 +217,25 @@ export default function Navbar() {
                   mobile
                 />
               ))}
-              <div className="pt-3 border-t border-white/10 space-y-2">
+              <div className="pt-3 mt-1 border-t border-white/10 space-y-2">
                 <a
                   href={`tel:+91${company.phone}`}
                   className={cn(
-                    "flex items-center gap-2 px-4 py-3 text-sm font-semibold",
+                    "flex items-center gap-2 px-4 py-3 text-lg font-bold",
                     scrolled ? "text-primary" : "text-white"
                   )}
                 >
-                  <Phone className="w-4 h-4 text-accent" />
+                  <Phone className="w-5 h-5 text-accent" />
                   Call {company.phoneDisplay}
                 </a>
                 <Button
                   href={`https://wa.me/91${company.whatsapp}`}
                   external
                   variant="whatsapp"
-                  size="sm"
+                  size="md"
                   className="w-full"
                 >
-                  <WhatsAppIcon className="w-4 h-4" />
+                  <WhatsAppIcon className="w-5 h-5" />
                   WhatsApp Us
                 </Button>
               </div>
