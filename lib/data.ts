@@ -20,14 +20,14 @@ export const company = {
 };
 
 export const navLinks = [
-  { href: "/", label: "Home" },
-  { href: "/about", label: "About Us" },
-  { href: "/services", label: "Services" },
-  { href: "/subsidy", label: "Subsidy" },
-  { href: "/process", label: "Process" },
-  { href: "/products", label: "Products" },
-  { href: "/finance", label: "Finance" },
-  { href: "/contact", label: "Contact" },
+  { href: "/", label: "Home", enabled: true },
+  { href: "/about", label: "About Us", enabled: true },
+  { href: "/services", label: "Services", enabled: false },
+  { href: "/subsidy", label: "Subsidy", enabled: false },
+  { href: "/process", label: "Process", enabled: false },
+  { href: "/products", label: "Products", enabled: false },
+  { href: "/finance", label: "Finance", enabled: false },
+  { href: "/contact", label: "Contact", enabled: true },
 ];
 
 export const highlights = [

@@ -10,6 +10,88 @@ import { navLinks, company } from "@/lib/data";
 import { cn } from "@/lib/utils";
 import Button from "@/components/ui/Button";
 
+interface NavItemProps {
+  href: string;
+  label: string;
+  enabled: boolean;
+  pathname: string;
+  scrolled: boolean;
+  mobile?: boolean;
+}
+
+function NavItem({
+  href,
+  label,
+  enabled,
+  pathname,
+  scrolled,
+  mobile,
+}: NavItemProps) {
+  const isActive = pathname === href;
+
+  const activeClasses = scrolled
+    ? "text-accent nav-link-active"
+    : "text-accent-light nav-link-active";
+
+  const enabledClasses = scrolled
+    ? "text-foreground/80 hover:text-primary hover:bg-primary/5"
+    : "text-white/85 hover:text-white hover:bg-white/10";
+
+  const disabledClasses = scrolled
+    ? "text-foreground/35 cursor-not-allowed"
+    : "text-white/35 cursor-not-allowed";
+
+  const mobileActiveClasses = scrolled
+    ? "bg-accent/10 text-accent"
+    : "bg-white/10 text-accent-light";
+
+  const mobileEnabledClasses = scrolled
+    ? "text-foreground hover:bg-primary/5"
+    : "text-white/90 hover:bg-white/10";
+
+  const mobileDisabledClasses = scrolled
+    ? "text-foreground/35 cursor-not-allowed"
+    : "text-white/35 cursor-not-allowed";
+
+  if (!enabled) {
+    return (
+      <span
+        role="link"
+        aria-disabled="true"
+        title="Coming soon"
+        className={cn(
+          mobile
+            ? "block px-4 py-3 rounded-xl text-sm font-medium select-none"
+            : "px-3 py-2 text-sm font-medium rounded-lg select-none",
+          mobile ? mobileDisabledClasses : disabledClasses
+        )}
+      >
+        {label}
+      </span>
+    );
+  }
+
+  return (
+    <Link
+      href={href}
+      className={cn(
+        mobile
+          ? "block px-4 py-3 rounded-xl text-sm font-medium transition-colors"
+          : "px-3 py-2 text-sm font-medium rounded-lg transition-all duration-200",
+        isActive
+          ? mobile
+            ? mobileActiveClasses
+            : activeClasses
+          : mobile
+            ? mobileEnabledClasses
+            : enabledClasses
+      )}
+    >
+      {label}
+    </Link>
+  );
+}
+
 export default function Navbar() {
   const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false);
@@ -68,22 +150,14 @@ export default function Navbar() {
 
           <div className="hidden xl:flex items-center gap-1">
             {navLinks.map((link) => (
-              <Link
+              <NavItem
                 key={link.href}
                 href={link.href}
-                className={cn(
-                  "px-3 py-2 text-sm font-medium rounded-lg transition-all duration-200",
-                  pathname === link.href
-                    ? scrolled
-                      ? "text-accent nav-link-active"
-                      : "text-accent-light nav-link-active"
-                    : scrolled
-                      ? "text-foreground/80 hover:text-primary hover:bg-primary/5"
-                      : "text-white/85 hover:text-white hover:bg-white/10"
-                )}
-              >
-                {link.label}
-              </Link>
+                label={link.label}
+                enabled={link.enabled}
+                pathname={pathname}
+                scrolled={scrolled}
+              />
             ))}
           </div>
 
@@ -132,22 +206,15 @@ export default function Navbar() {
               )}
             >
               {navLinks.map((link) => (
-                <Link
+                <NavItem
                   key={link.href}
                   href={link.href}
-                  className={cn(
-                    "block px-4 py-3 rounded-xl text-sm font-medium transition-colors",
-                    pathname === link.href
-                      ? scrolled
-                        ? "bg-accent/10 text-accent"
-                        : "bg-white/10 text-accent-light"
-                      : scrolled
-                        ? "text-foreground hover:bg-primary/5"
-                        : "text-white/90 hover:bg-white/10"
-                  )}
-                >
-                  {link.label}
-                </Link>
+                  label={link.label}
+                  enabled={link.enabled}
+                  pathname={pathname}
+                  scrolled={scrolled}
+                  mobile
+                />
               ))}
               <div className="pt-3 border-t border-white/10 space-y-2">
                 <a
