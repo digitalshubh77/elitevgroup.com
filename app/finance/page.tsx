@@ -62,19 +62,18 @@ export default function FinancePage() {
 
       <PageSection variant="white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-3 md:gap-4 mb-5">
-            {financeFeatures.map((feature, i) => (
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-3 mb-4">
+            {financeFeatures.map((feature) => (
               <div
                 key={feature.title}
-                className="bg-white rounded-2xl p-6 md:p-7 border border-border shadow-xl card-hover card-glow shine-hover text-center animate-count-pop"
-                style={{ animationDelay: `${i * 0.1}s` }}
+                className="bg-white rounded-xl p-4 border border-border text-center"
               >
                 <div
-                  className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${feature.color} flex items-center justify-center mx-auto mb-5`}
+                  className={`w-12 h-12 rounded-xl bg-gradient-to-br ${feature.color} flex items-center justify-center mx-auto mb-3`}
                 >
-                  <feature.icon className={`w-8 h-8 ${feature.iconColor}`} />
+                  <feature.icon className={`w-6 h-6 ${feature.iconColor}`} />
                 </div>
-                <h3 className="font-bold text-foreground mb-2 text-lg">
+                <h3 className="font-bold text-foreground mb-1 text-base">
                   {feature.title}
                 </h3>
                 <p className="text-sm text-muted leading-relaxed">
@@ -84,7 +83,7 @@ export default function FinancePage() {
             ))}
           </div>
 
-          <p className="text-center text-muted text-sm max-w-2xl mx-auto bg-background rounded-xl px-6 py-4 border border-border">
+          <p className="text-center text-muted text-sm max-w-2xl mx-auto px-4 py-3">
             *Final interest rate, eligibility, and terms as per the bank&apos;s rules and regulations.
           </p>
         </div>
@@ -92,8 +91,7 @@ export default function FinancePage() {
 
       <PageSection variant="muted">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-white rounded-2xl p-4 md:p-5 border border-border shadow-2xl text-center relative overflow-hidden shine-hover">
-            <div className="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-[#25D366] via-accent to-primary" />
+          <div className="bg-white rounded-xl p-5 border border-border text-center">
             <SectionHeading
               badge="Free Analysis"
               title="Free Electricity Bill Analysis"
@@ -104,7 +102,6 @@ export default function FinancePage() {
               external
               variant="whatsapp"
               size="lg"
-              className="btn-shine"
             >
               <WhatsAppIcon className="w-5 h-5" />
               Send Bill on WhatsApp

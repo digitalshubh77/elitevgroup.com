@@ -44,7 +44,7 @@ export default function HeroVisual() {
             style={{ animationDuration: "20s", animationDelay: delay }}
           >
             <div
-              className="glass-card-strong rounded-xl p-2.5 shadow-lg"
+              className="glass-card-strong rounded-xl p-2.5 shadow-sm"
               style={{ transform: `translateX(${100 + i * 12}px) translateZ(20px)` }}
             >
               <Icon className={`w-5 h-5 ${color}`} />
@@ -67,7 +67,7 @@ export default function HeroVisual() {
             />
           ))}
 
-          <div className="relative w-28 h-28 xl:w-32 xl:h-32 rounded-full bg-gradient-to-br from-accent via-accent-light to-amber-300 shadow-2xl shadow-accent/50 flex items-center justify-center animate-pulse-glow preserve-3d">
+          <div className="relative w-28 h-28 xl:w-32 xl:h-32 rounded-full bg-gradient-to-br from-accent via-accent-light to-amber-300 shadow-sm shadow-accent/50 flex items-center justify-center animate-pulse-glow preserve-3d">
             <Sun className="w-14 h-14 xl:w-16 xl:h-16 text-primary-dark relative z-10" />
           </div>
         </div>
@@ -96,9 +96,9 @@ function TiltBadge({
   green?: boolean;
 }) {
   return (
-    <div className="glass-card-strong rounded-2xl px-4 py-3 text-center min-w-[100px] card-3d">
+    <div className="glass-card-strong rounded-xl px-3 py-2.5 text-center min-w-[100px]">
       <p
-        className={`text-2xl font-bold ${accent ? "text-accent-light" : green ? "text-solar-green" : "text-white"}`}
+        className={`text-base font-bold ${accent ? "text-accent-light" : green ? "text-solar-green" : "text-white"}`}
       >
         {value}
       </p>

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import PageHero from "@/components/layout/PageHero";
 import PageSection from "@/components/layout/PageSection";
+import Container from "@/components/layout/Container";
 import SectionHeading from "@/components/ui/SectionHeading";
 import CTASection from "@/components/home/CTASection";
 import { panelBrands, inverterBrands } from "@/lib/data";
@@ -22,92 +23,87 @@ export default function ProductsPage() {
       />
 
       <PageSection variant="white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <Container>
           <SectionHeading
             badge="Solar Panels"
             title="Solar Panel Brands"
             subtitle="Government-approved Made-in-India panels eligible for PM Surya Ghar subsidy."
           />
-          <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-3 md:gap-4">
-            {panelBrands.map((brand, i) => (
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3">
+            {panelBrands.map((brand) => (
               <div
                 key={brand}
-                className="bg-white rounded-2xl p-6 md:p-7 border border-border shadow-xl card-hover card-glow shine-hover text-center group animate-count-pop"
-                style={{ animationDelay: `${i * 0.08}s` }}
+                className="bg-white rounded-xl p-4 border border-border text-center"
               >
-                <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-accent/10 to-accent/20 flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
-                  <Sun className="w-8 h-8 text-accent" />
+                <div className="w-11 h-11 rounded-xl bg-accent/10 flex items-center justify-center mx-auto mb-2.5">
+                  <Sun className="w-5 h-5 text-accent" />
                 </div>
-                <h3 className="font-bold text-foreground group-hover:text-primary transition-colors">
-                  {brand}
-                </h3>
+                <h3 className="font-bold text-foreground">{brand}</h3>
               </div>
             ))}
           </div>
-        </div>
+        </Container>
       </PageSection>
 
       <PageSection variant="muted">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <Container>
           <SectionHeading
             badge="Inverters"
             title="Inverter Brands"
             subtitle="Reliable inverters for maximum energy conversion and long-term performance."
           />
-          <div className="grid sm:grid-cols-2 gap-5 max-w-2xl mx-auto">
-            {inverterBrands.map((brand, i) => (
+          <div className="grid sm:grid-cols-2 gap-3 max-w-2xl mx-auto">
+            {inverterBrands.map((brand) => (
               <div
                 key={brand}
-                className="bg-white rounded-2xl p-8 border border-border shadow-xl card-hover shine-hover text-center animate-fade-up"
-                style={{ animationDelay: `${i * 0.1}s` }}
+                className="bg-white rounded-xl p-4 border border-border text-center"
               >
-                <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-primary/10 to-primary/20 flex items-center justify-center mx-auto mb-4">
-                  <Zap className="w-8 h-8 text-primary" />
+                <div className="w-11 h-11 rounded-xl bg-primary/10 flex items-center justify-center mx-auto mb-2.5">
+                  <Zap className="w-5 h-5 text-primary" />
                 </div>
-                <h3 className="font-bold text-foreground text-lg">{brand}</h3>
+                <h3 className="font-bold text-foreground text-base">{brand}</h3>
               </div>
             ))}
           </div>
-        </div>
+        </Container>
       </PageSection>
 
       <PageSection variant="white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <Container>
           <SectionHeading
             badge="Batteries"
             title="Battery Options"
             subtitle="All battery brands available — fully as per customer's choice."
           />
-          <div className="max-w-lg mx-auto bg-white rounded-3xl p-8 md:p-10 border border-border shadow-xl text-center card-hover shine-hover">
-            <div className="w-20 h-20 rounded-2xl bg-gradient-to-br from-solar-green/10 to-solar-green/20 flex items-center justify-center mx-auto mb-5">
-              <Battery className="w-10 h-10 text-solar-green" />
+          <div className="max-w-lg mx-auto bg-white rounded-xl p-5 border border-border text-center">
+            <div className="w-12 h-12 rounded-xl bg-solar-green/10 flex items-center justify-center mx-auto mb-3">
+              <Battery className="w-6 h-6 text-solar-green" />
             </div>
-            <p className="text-muted leading-relaxed text-lg">
+            <p className="text-muted leading-relaxed">
               All battery brands available — fully as per customer&apos;s choice.
               We help you select the best option based on your backup needs and budget.
             </p>
           </div>
-        </div>
+        </Container>
       </PageSection>
 
-      <PageSection variant="pattern">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="hero-gradient-static rounded-3xl p-8 md:p-14 text-white text-center relative overflow-hidden shadow-2xl shadow-primary/20">
-            <div className="absolute inset-0 solar-grid-bg-animated opacity-10" />
-            <div className="absolute top-0 right-0 w-64 h-64 bg-accent/20 rounded-full blur-3xl animate-aurora-1" />
-            <Shield className="w-14 h-14 text-accent-light mx-auto mb-5 relative" />
-            <h3 className="text-2xl md:text-4xl font-bold mb-4 relative">
+      <PageSection variant="muted">
+        <Container>
+          <div className="max-w-3xl mx-auto hero-gradient-static rounded-xl p-5 md:p-6 text-white text-center relative overflow-hidden">
+            <div className="absolute inset-0 solar-grid-bg opacity-10" />
+            <Shield className="w-10 h-10 text-accent-light mx-auto mb-3 relative" />
+            <h3 className="text-xl md:text-2xl font-bold mb-2 relative">
               Up to 30 Year Panel Warranty
             </h3>
-            <p className="text-white/80 max-w-2xl mx-auto relative leading-relaxed text-lg mb-4">
+            <p className="text-white/80 max-w-2xl mx-auto relative leading-relaxed mb-4">
               Solar panel warranty up to 30 years (as per company policy). Full
               warranty details are given with your quotation.
             </p>
-            <ul className="flex flex-wrap justify-center gap-4 relative">
+            <ul className="flex flex-wrap justify-center gap-3 relative">
               {["Made in India", "Govt. Approved", "Premium Quality"].map((tag) => (
                 <li
                   key={tag}
-                  className="flex items-center gap-2 px-4 py-2 rounded-full glass-card text-sm font-medium"
+                  className="flex items-center gap-1.5 text-sm font-medium text-white/90"
                 >
                   <CheckCircle2 className="w-4 h-4 text-accent-light" />
                   {tag}
@@ -115,7 +111,7 @@ export default function ProductsPage() {
               ))}
             </ul>
           </div>
-        </div>
+        </Container>
       </PageSection>
 
       <CTASection />

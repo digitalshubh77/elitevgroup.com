@@ -20,14 +20,14 @@ export default function ElectricityCalculator() {
     monthlyBill > 0 ? calculateSolarSavings(monthlyBill) : null;
 
   return (
-    <div className="grid lg:grid-cols-2 gap-6 lg:gap-8 items-start">
-      <div className="bg-white rounded-2xl p-5 md:p-6 shadow-xl border border-border">
+    <div className="grid lg:grid-cols-2 gap-4 lg:gap-5 items-start">
+      <div className="bg-white rounded-2xl p-5 md:p-6 shadow-sm border border-border">
         <div className="flex items-center gap-3 mb-6">
           <div className="w-12 h-12 rounded-2xl bg-accent/10 flex items-center justify-center">
             <Calculator className="w-6 h-6 text-accent" />
           </div>
           <div>
-            <h3 className="text-xl font-bold text-foreground">
+            <h3 className="text-base font-bold text-foreground">
               Electricity Bill Calculator
             </h3>
             <p className="text-sm text-muted">
@@ -57,7 +57,7 @@ export default function ElectricityCalculator() {
               max="50000"
               value={bill}
               onChange={(e) => setBill(e.target.value)}
-              className="w-full pl-12 pr-4 py-4 rounded-xl border-2 border-border focus:border-accent focus:ring-2 focus:ring-accent/20 outline-none text-lg font-semibold transition-all"
+              className="w-full pl-12 pr-4 py-4 rounded-xl border-2 border-border focus:border-accent focus:ring-2 focus:ring-accent/20 outline-none text-base font-semibold transition-all"
               placeholder="Enter monthly bill"
             />
           </div>
@@ -87,7 +87,7 @@ export default function ElectricityCalculator() {
 
       {result && (
         <div className="space-y-4 animate-fade-up">
-          <div className="bg-gradient-to-br from-primary to-primary-dark rounded-3xl p-6 md:p-8 text-white relative overflow-hidden">
+          <div className="bg-gradient-to-br from-primary to-primary-dark rounded-2xl p-4 md:p-5 text-white relative overflow-hidden">
             <div className="absolute top-0 right-0 w-40 h-40 bg-accent/20 rounded-full blur-3xl" />
             <div className="relative">
               <div className="flex items-center gap-2 mb-6">
@@ -96,7 +96,7 @@ export default function ElectricityCalculator() {
                   Recommended System
                 </span>
               </div>
-              <p className="text-5xl md:text-6xl font-bold mb-2">
+              <p className="text-4xl md:text-5xl font-bold mb-2">
                 {result.recommendedKw} kW
               </p>
               <p className="text-white/70">
@@ -105,31 +105,31 @@ export default function ElectricityCalculator() {
             </div>
           </div>
 
-          <div className="grid grid-cols-2 gap-4">
-            <div className="bg-white rounded-2xl p-5 border border-border card-hover">
+          <div className="grid grid-cols-2 gap-3">
+            <div className="bg-white rounded-xl p-4 border border-border">
               <IndianRupee className="w-5 h-5 text-solar-green mb-2" />
-              <p className="text-2xl font-bold text-foreground">
+              <p className="text-xl font-bold text-foreground">
                 {formatCurrency(result.subsidyAmount)}
               </p>
               <p className="text-sm text-muted">Govt. Subsidy</p>
             </div>
-            <div className="bg-white rounded-2xl p-5 border border-border card-hover">
+            <div className="bg-white rounded-xl p-4 border border-border">
               <TrendingDown className="w-5 h-5 text-accent mb-2" />
-              <p className="text-2xl font-bold text-foreground">
+              <p className="text-xl font-bold text-foreground">
                 {formatCurrency(result.monthlySavings)}
               </p>
               <p className="text-sm text-muted">Monthly Savings</p>
             </div>
-            <div className="bg-white rounded-2xl p-5 border border-border card-hover">
+            <div className="bg-white rounded-xl p-4 border border-border">
               <Zap className="w-5 h-5 text-primary mb-2" />
-              <p className="text-2xl font-bold text-foreground">
+              <p className="text-xl font-bold text-foreground">
                 {formatCurrency(result.annualSavings)}
               </p>
               <p className="text-sm text-muted">Annual Savings</p>
             </div>
-            <div className="bg-white rounded-2xl p-5 border border-border card-hover">
+            <div className="bg-white rounded-xl p-4 border border-border">
               <Calculator className="w-5 h-5 text-primary mb-2" />
-              <p className="text-2xl font-bold text-foreground">
+              <p className="text-xl font-bold text-foreground">
                 ~{result.paybackYears} yrs
               </p>
               <p className="text-sm text-muted">Payback Period</p>

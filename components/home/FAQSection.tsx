@@ -10,7 +10,7 @@ export default function FAQSection() {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   return (
-    <section className="py-5 sm:py-6 md:py-8 section-pattern relative overflow-hidden">
+    <section className="py-4 sm:py-5 md:py-6 section-pattern relative overflow-hidden">
       <div className="absolute top-10 right-20 w-64 h-64 bg-primary/5 rounded-full blur-3xl animate-aurora-1 pointer-events-none" />
       <div className="absolute bottom-10 left-20 w-80 h-80 bg-accent/5 rounded-full blur-3xl animate-aurora-2 pointer-events-none" />
 
@@ -28,7 +28,7 @@ export default function FAQSection() {
               className={cn(
                 "bg-white rounded-2xl border overflow-hidden shadow-sm transition-all duration-300",
                 openIndex === i
-                  ? "border-accent/40 shadow-lg shadow-accent/5"
+                  ? "border-accent/40"
                   : "border-border hover:border-accent/20"
               )}
             >

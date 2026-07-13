@@ -30,7 +30,7 @@ function NavItem({
   const isActive = pathname === href;
 
   const desktopClasses =
-    "px-3 2xl:px-4 py-2.5 text-sm 2xl:text-base font-semibold rounded-lg whitespace-nowrap shrink-0 transition-all duration-200";
+    "px-3 2xl:px-4 py-2.5 text-xs 2xl:text-sm font-semibold rounded-lg whitespace-nowrap shrink-0 transition-all duration-200";
 
   if (!enabled) {
     return (
@@ -40,7 +40,7 @@ function NavItem({
         title="Coming soon"
         className={cn(
           mobile
-            ? "block px-4 py-3.5 rounded-xl text-base font-semibold select-none text-foreground/50 cursor-not-allowed"
+            ? "block px-4 py-3.5 rounded-xl text-sm font-semibold select-none text-foreground/50 cursor-not-allowed"
             : cn(desktopClasses, "text-foreground/50 cursor-not-allowed select-none")
         )}
       >
@@ -56,7 +56,7 @@ function NavItem({
       className={cn(
         mobile
           ? cn(
-              "block px-4 py-3.5 rounded-xl text-base font-semibold transition-colors",
+              "block px-4 py-3.5 rounded-xl text-sm font-semibold transition-colors",
               isActive
                 ? "bg-accent/10 text-accent"
                 : "text-foreground hover:bg-primary/5"
@@ -83,7 +83,7 @@ export default function Navbar() {
       <nav className="w-full max-w-[100vw] px-4 sm:px-6 lg:px-10">
         <div className="grid grid-cols-[auto_1fr_auto] items-center gap-4 xl:gap-5">
           <Link href="/" className="flex items-center gap-3 shrink-0 min-w-0">
-            <div className="relative w-12 h-12 rounded-xl overflow-hidden shadow-lg shrink-0">
+            <div className="relative w-12 h-12 rounded-xl overflow-hidden shadow-sm shrink-0">
               <Image
                 src="/logo.svg"
                 alt={`${company.shortName} logo`}
@@ -93,10 +93,10 @@ export default function Navbar() {
               />
             </div>
             <div className="hidden lg:block min-w-0">
-              <p className="font-extrabold text-xl xl:text-2xl leading-tight text-primary truncate">
+              <p className="font-extrabold text-lg xl:text-xl leading-tight text-primary truncate">
                 {company.shortName}
               </p>
-              <p className="text-sm xl:text-base font-semibold tracking-wide text-accent truncate hidden xl:block">
+              <p className="text-xs xl:text-sm font-semibold tracking-wide text-accent truncate hidden xl:block">
                 {company.tagline}
               </p>
             </div>
@@ -148,7 +148,7 @@ export default function Navbar() {
 
         {isOpen && (
           <div className="xl:hidden mt-3 pb-2 animate-fade-up">
-            <div className="rounded-xl p-3 space-y-0.5 shadow-xl max-h-[70vh] overflow-y-auto bg-white border border-border">
+            <div className="rounded-xl p-3 space-y-0.5 shadow-sm max-h-[70vh] overflow-y-auto bg-white border border-border">
               {navLinks.map((link) => (
                 <NavItem
                   key={link.href}

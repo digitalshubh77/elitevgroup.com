@@ -30,13 +30,12 @@ export default function ContactForm() {
 
   if (submitted) {
     return (
-      <div className="bg-white rounded-2xl p-6 md:p-8 shadow-xl border border-border text-center card-3d relative overflow-hidden">
-        <div className="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-solar-green via-accent to-primary" />
-        <div className="w-20 h-20 rounded-full bg-solar-green/10 flex items-center justify-center mx-auto mb-5 animate-count-pop">
-          <CheckCircle className="w-10 h-10 text-solar-green" />
+      <div className="bg-white rounded-xl p-4 md:p-5 border border-border text-center">
+        <div className="w-16 h-16 rounded-full bg-solar-green/10 flex items-center justify-center mx-auto mb-4">
+          <CheckCircle className="w-8 h-8 text-solar-green" />
         </div>
-        <h3 className="text-2xl font-bold text-foreground mb-2">Thank You!</h3>
-        <p className="text-muted mb-6 max-w-sm mx-auto">
+        <h3 className="text-xl font-bold text-foreground mb-2">Thank You!</h3>
+        <p className="text-muted mb-5 max-w-sm mx-auto">
           Your enquiry has been sent via WhatsApp. Our team will contact you
           shortly.
         </p>
@@ -53,17 +52,15 @@ export default function ContactForm() {
   return (
     <form
       onSubmit={handleSubmit}
-      className="bg-white rounded-2xl p-5 md:p-6 shadow-xl border border-border space-y-4 card-3d relative overflow-hidden"
+      className="bg-white rounded-xl p-4 md:p-5 border border-border space-y-4"
     >
-      <div className="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-primary via-accent to-solar-green" />
-
-      <div className="flex items-start gap-4 pb-2">
-        <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-primary to-primary-dark flex items-center justify-center shrink-0 shadow-lg shadow-primary/20">
-          <MessageSquare className="w-6 h-6 text-accent-light" />
+      <div className="flex items-start gap-3 pb-1">
+        <div className="w-11 h-11 rounded-xl bg-primary flex items-center justify-center shrink-0">
+          <MessageSquare className="w-5 h-5 text-accent-light" />
         </div>
         <div>
-          <h3 className="text-xl font-bold text-foreground">Get Free Quote</h3>
-          <p className="text-sm text-muted mt-1">
+          <h3 className="text-lg font-bold text-foreground">Get Free Quote</h3>
+          <p className="text-sm text-muted mt-0.5">
             Fill the form — we&apos;ll reply on WhatsApp within hours.
           </p>
         </div>
@@ -145,7 +142,7 @@ export default function ContactForm() {
 
       <button
         type="submit"
-        className="w-full flex items-center justify-center gap-2 bg-gradient-to-r from-accent to-accent-light text-primary-dark font-bold py-4 rounded-xl shadow-lg shadow-accent/30 hover:shadow-accent/50 hover:-translate-y-0.5 transition-all duration-300"
+        className="w-full flex items-center justify-center gap-2 bg-gradient-to-r from-accent to-accent-light text-primary-dark font-bold py-4 rounded-xl hover:shadow-accent/50 hover:-translate-y-0.5 transition-all duration-300"
       >
         <Send className="w-5 h-5" />
         Get Free Quote via WhatsApp

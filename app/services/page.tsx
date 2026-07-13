@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import PageHero from "@/components/layout/PageHero";
 import PageSection from "@/components/layout/PageSection";
+import Container from "@/components/layout/Container";
 import SectionHeading from "@/components/ui/SectionHeading";
 import CTASection from "@/components/home/CTASection";
 import { services, systemSizes } from "@/lib/data";
@@ -22,57 +23,52 @@ export default function ServicesPage() {
       />
 
       <PageSection variant="white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-3">
-          {services.map((service, i) => {
-            const Icon = getIcon(service.icon);
-            return (
-              <div
-                key={service.slug}
-                className={`group relative flex flex-col md:flex-row gap-5 md:gap-8 items-start bg-white rounded-2xl p-4 md:p-6 border border-border shadow-xl card-hover card-glow shine-hover overflow-hidden ${
-                  i % 2 === 1 ? "md:flex-row-reverse" : ""
-                }`}
-              >
-                <div className="absolute top-0 right-0 w-48 h-48 bg-accent/5 rounded-full blur-2xl opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none" />
-
-                <div className="relative w-16 h-16 md:w-24 md:h-24 rounded-2xl bg-gradient-to-br from-primary to-primary-dark flex items-center justify-center shrink-0 shadow-lg shadow-primary/20 group-hover:scale-110 transition-transform duration-300">
-                  <Icon className="w-8 h-8 md:w-11 md:h-11 text-accent-light" />
+        <Container>
+          <div className="bg-white rounded-xl border border-border divide-y divide-border overflow-hidden">
+            {services.map((service, i) => {
+              const Icon = getIcon(service.icon);
+              return (
+                <div
+                  key={service.slug}
+                  className="flex flex-col sm:flex-row gap-4 items-start p-4 md:p-5"
+                >
+                  <div className="w-12 h-12 rounded-xl bg-primary flex items-center justify-center shrink-0">
+                    <Icon className="w-6 h-6 text-accent-light" />
+                  </div>
+                  <div className="flex-1 min-w-0">
+                    <p className="text-xs font-bold text-accent uppercase tracking-wide mb-1">
+                      Service {i + 1}
+                    </p>
+                    <h3 className="text-lg md:text-xl font-bold text-foreground mb-1.5">
+                      {service.title}
+                    </h3>
+                    <p className="text-muted leading-relaxed">{service.description}</p>
+                  </div>
                 </div>
-                <div className="relative flex-1">
-                  <span className="inline-block px-3 py-1 rounded-full bg-accent/10 text-accent font-bold text-xs mb-3">
-                    Service {i + 1}
-                  </span>
-                  <h3 className="text-2xl md:text-3xl font-bold text-foreground mb-4 group-hover:text-primary transition-colors">
-                    {service.title}
-                  </h3>
-                  <p className="text-muted leading-relaxed text-lg">
-                    {service.description}
-                  </p>
-                </div>
-              </div>
-            );
-          })}
-        </div>
+              );
+            })}
+          </div>
+        </Container>
       </PageSection>
 
-      <PageSection variant="pattern">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <PageSection variant="muted">
+        <Container className="text-center">
           <SectionHeading
             badge="System Sizes"
             title="System Sizes We Install"
             subtitle="We design and install solar systems tailored to your electricity consumption and roof space."
           />
-          <div className="flex flex-wrap justify-center gap-3 md:gap-4">
-            {systemSizes.map((size, i) => (
+          <div className="flex flex-wrap justify-center gap-2.5">
+            {systemSizes.map((size) => (
               <div
                 key={size}
-                className="px-8 md:px-10 py-5 rounded-2xl bg-white border-2 border-primary/10 text-primary font-extrabold text-xl md:text-2xl shadow-lg card-hover shine-hover animate-count-pop"
-                style={{ animationDelay: `${i * 0.1}s` }}
+                className="px-5 py-3 rounded-lg bg-white border border-border text-primary font-extrabold text-lg md:text-xl"
               >
                 {size}
               </div>
             ))}
           </div>
-        </div>
+        </Container>
       </PageSection>
 
       <CTASection />

@@ -5,7 +5,6 @@ import Container from "@/components/layout/Container";
 import ContactForm from "@/components/contact/ContactForm";
 import CalculatorSection from "@/components/home/CalculatorSection";
 import CTASection from "@/components/home/CTASection";
-import TiltCard from "@/components/ui/TiltCard";
 import ScrollReveal from "@/components/ui/ScrollReveal";
 import Button from "@/components/ui/Button";
 import { company, freeServices } from "@/lib/data";
@@ -61,143 +60,138 @@ export default function ContactPage() {
         subtitle="Book a free site visit, get a quotation, or ask about government subsidy — we're here for you."
       />
 
-      <PageSection variant="white" className="perspective-1000">
+      <PageSection variant="white">
         <Container>
-          <div className="grid sm:grid-cols-3 gap-4 mb-5 md:mb-6">
+          <div className="grid sm:grid-cols-3 gap-3 mb-4 md:mb-5">
             {quickActions.map((action, i) => (
-              <ScrollReveal key={action.label} delay={i * 80}>
-                <TiltCard innerClassName="h-full">
-                  <a
-                    href={action.href}
-                    target={action.external ? "_blank" : undefined}
-                    rel={action.external ? "noopener noreferrer" : undefined}
-                    className="block bg-white rounded-2xl p-4 md:p-5 border border-border shadow-lg card-3d shine-hover h-full group"
+              <ScrollReveal key={action.label} delay={i * 60}>
+                <a
+                  href={action.href}
+                  target={action.external ? "_blank" : undefined}
+                  rel={action.external ? "noopener noreferrer" : undefined}
+                  className="block bg-white rounded-xl p-4 border border-border h-full group hover:border-primary/25 transition-colors"
+                >
+                  <div
+                    className={`w-11 h-11 rounded-xl bg-gradient-to-br ${action.color} flex items-center justify-center mb-3`}
                   >
-                    <div
-                      className={`w-14 h-14 rounded-2xl bg-gradient-to-br ${action.color} flex items-center justify-center mb-4 group-hover:scale-110 transition-transform`}
-                    >
-                      <action.icon className={`w-7 h-7 ${action.iconColor}`} />
-                    </div>
-                    <p className="text-sm font-semibold text-muted">{action.label}</p>
-                    <p className="text-base font-bold text-foreground mt-1 break-all group-hover:text-primary transition-colors">
-                      {action.value}
-                    </p>
-                  </a>
-                </TiltCard>
+                    <action.icon className={`w-5 h-5 ${action.iconColor}`} />
+                  </div>
+                  <p className="text-sm font-semibold text-muted">{action.label}</p>
+                  <p className="text-base font-bold text-foreground mt-0.5 break-all group-hover:text-primary transition-colors">
+                    {action.value}
+                  </p>
+                </a>
               </ScrollReveal>
             ))}
           </div>
 
-          <div className="grid lg:grid-cols-5 gap-4 lg:gap-6">
-            <div className="lg:col-span-2 space-y-3">
+          <div className="grid lg:grid-cols-5 gap-4">
+            <div className="lg:col-span-2">
               <ScrollReveal direction="left">
-                <TiltCard innerClassName="h-full">
-                  <div className="bg-white rounded-2xl p-4 md:p-5 border border-border shadow-xl card-3d relative overflow-hidden h-full">
-                    <div className="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-primary via-accent to-solar-green" />
-                    <h3 className="text-xl font-bold text-foreground mb-4 flex items-center gap-2">
-                      <MapPin className="w-5 h-5 text-accent" />
-                      Contact Details
-                    </h3>
-                    <ul className="space-y-3">
-                      <li className="flex items-start gap-4 p-3 rounded-xl hover:bg-background transition-colors card-3d">
-                        <div className="w-11 h-11 rounded-xl bg-primary/10 flex items-center justify-center shrink-0">
-                          <MapPin className="w-5 h-5 text-primary" />
+                <div className="bg-white rounded-xl p-4 md:p-5 border border-border h-full">
+                  <h3 className="text-base font-bold text-foreground mb-3 flex items-center gap-2">
+                    <MapPin className="w-5 h-5 text-accent" />
+                    Contact Details
+                  </h3>
+                  <ul className="space-y-1">
+                    <li className="flex items-start gap-3 p-2.5 rounded-lg">
+                      <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center shrink-0">
+                        <MapPin className="w-4 h-4 text-primary" />
+                      </div>
+                      <div>
+                        <p className="font-semibold text-foreground">Address</p>
+                        <p className="text-sm text-muted mt-0.5 leading-relaxed">
+                          {company.address}
+                        </p>
+                      </div>
+                    </li>
+                    <li>
+                      <a
+                        href={`tel:+91${company.phone}`}
+                        className="flex items-start gap-3 p-2.5 rounded-lg hover:bg-background transition-colors group"
+                      >
+                        <div className="w-10 h-10 rounded-lg bg-accent/10 flex items-center justify-center shrink-0">
+                          <Phone className="w-4 h-4 text-accent" />
                         </div>
                         <div>
-                          <p className="font-semibold text-foreground">Address</p>
-                          <p className="text-sm text-muted mt-1 leading-relaxed">
-                            {company.address}
+                          <p className="font-semibold text-foreground group-hover:text-accent transition-colors">
+                            Phone
+                          </p>
+                          <p className="text-sm text-muted mt-0.5">
+                            +91 {company.phoneDisplay}
                           </p>
                         </div>
-                      </li>
-                      <li>
-                        <a
-                          href={`tel:+91${company.phone}`}
-                          className="flex items-start gap-4 p-3 rounded-xl hover:bg-background transition-colors group card-3d"
-                        >
-                          <div className="w-11 h-11 rounded-xl bg-accent/10 flex items-center justify-center shrink-0">
-                            <Phone className="w-5 h-5 text-accent" />
-                          </div>
-                          <div>
-                            <p className="font-semibold text-foreground group-hover:text-accent transition-colors">
-                              Phone
-                            </p>
-                            <p className="text-sm text-muted mt-1">
-                              +91 {company.phoneDisplay}
-                            </p>
-                          </div>
-                        </a>
-                      </li>
-                      <li>
-                        <a
-                          href={`mailto:${company.email}`}
-                          className="flex items-start gap-4 p-3 rounded-xl hover:bg-background transition-colors group card-3d"
-                        >
-                          <div className="w-11 h-11 rounded-xl bg-primary/10 flex items-center justify-center shrink-0">
-                            <Mail className="w-5 h-5 text-primary" />
-                          </div>
-                          <div>
-                            <p className="font-semibold text-foreground group-hover:text-accent transition-colors">
-                              Email
-                            </p>
-                            <p className="text-sm text-muted mt-1 break-all">
-                              {company.email}
-                            </p>
-                          </div>
-                        </a>
-                      </li>
-                    </ul>
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        href={`mailto:${company.email}`}
+                        className="flex items-start gap-3 p-2.5 rounded-lg hover:bg-background transition-colors group"
+                      >
+                        <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center shrink-0">
+                          <Mail className="w-4 h-4 text-primary" />
+                        </div>
+                        <div>
+                          <p className="font-semibold text-foreground group-hover:text-accent transition-colors">
+                            Email
+                          </p>
+                          <p className="text-sm text-muted mt-0.5 break-all">
+                            {company.email}
+                          </p>
+                        </div>
+                      </a>
+                    </li>
+                  </ul>
 
-                    <div className="mt-4 pt-6 border-t border-border flex items-center gap-3">
-                      <Clock className="w-5 h-5 text-accent shrink-0" />
-                      <div>
-                        <p className="font-semibold text-foreground text-sm">Service Area</p>
-                        <p className="text-sm text-muted">{company.serviceArea}</p>
-                      </div>
+                  <div className="mt-3 pt-3 border-t border-border flex items-center gap-3">
+                    <Clock className="w-5 h-5 text-accent shrink-0" />
+                    <div>
+                      <p className="font-semibold text-foreground text-sm">Service Area</p>
+                      <p className="text-sm text-muted">{company.serviceArea}</p>
                     </div>
-
-                    <div className="mt-4 flex gap-3">
-                      <a
-                        href={company.facebook}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="w-11 h-11 rounded-xl bg-primary/5 flex items-center justify-center hover:bg-primary hover:text-white transition-all duration-300 card-3d"
-                        aria-label="Facebook"
-                      >
-                        <FacebookIcon className="w-5 h-5" />
-                      </a>
-                      <a
-                        href={company.instagram}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="w-11 h-11 rounded-xl bg-primary/5 flex items-center justify-center hover:bg-primary hover:text-white transition-all duration-300 card-3d"
-                        aria-label="Instagram"
-                      >
-                        <InstagramIcon className="w-5 h-5" />
-                      </a>
-                      <a
-                        href={`https://wa.me/91${company.whatsapp}`}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="w-11 h-11 rounded-xl bg-[#25D366]/10 flex items-center justify-center hover:bg-[#25D366] hover:text-white transition-all duration-300 card-3d"
-                        aria-label="WhatsApp"
-                      >
-                        <WhatsAppIcon className="w-5 h-5" />
-                      </a>
-                    </div>
-
-                    <Button
-                      href={company.mapLink}
-                      external
-                      variant="secondary"
-                      size="md"
-                      className="w-full mt-4"
-                    >
-                      <ExternalLink className="w-4 h-4" />
-                      View on Google Maps
-                    </Button>
                   </div>
-                </TiltCard>
+
+                  <div className="mt-3 flex gap-2">
+                    <a
+                      href={company.facebook}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-10 h-10 rounded-lg bg-primary/5 flex items-center justify-center hover:bg-primary hover:text-white transition-colors"
+                      aria-label="Facebook"
+                    >
+                      <FacebookIcon className="w-5 h-5" />
+                    </a>
+                    <a
+                      href={company.instagram}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-10 h-10 rounded-lg bg-primary/5 flex items-center justify-center hover:bg-primary hover:text-white transition-colors"
+                      aria-label="Instagram"
+                    >
+                      <InstagramIcon className="w-5 h-5" />
+                    </a>
+                    <a
+                      href={`https://wa.me/91${company.whatsapp}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-10 h-10 rounded-lg bg-[#25D366]/10 flex items-center justify-center hover:bg-[#25D366] hover:text-white transition-colors"
+                      aria-label="WhatsApp"
+                    >
+                      <WhatsAppIcon className="w-5 h-5" />
+                    </a>
+                  </div>
+
+                  <Button
+                    href={company.mapLink}
+                    external
+                    variant="secondary"
+                    size="md"
+                    className="w-full mt-3"
+                  >
+                    <ExternalLink className="w-4 h-4" />
+                    View on Google Maps
+                  </Button>
+                </div>
               </ScrollReveal>
             </div>
 
@@ -208,21 +202,21 @@ export default function ContactPage() {
             </div>
           </div>
 
-          <ScrollReveal delay={150}>
-            <div className="grid md:grid-cols-[3fr_7fr] gap-3 items-stretch mt-4 lg:mt-5">
+          <ScrollReveal delay={100}>
+            <div className="grid md:grid-cols-[3fr_7fr] gap-3 items-stretch mt-4">
               <div className="space-y-3 flex flex-col min-w-0">
-                <div className="bg-gradient-to-br from-accent/10 via-accent/5 to-primary/5 rounded-2xl p-5 md:p-6 border border-accent/20 shadow-lg card-3d flex-1">
-                  <div className="flex items-center gap-2 mb-4">
+                <div className="bg-accent/5 rounded-xl p-4 md:p-5 border border-accent/15 flex-1">
+                  <div className="flex items-center gap-2 mb-3">
                     <Gift className="w-5 h-5 text-accent" />
-                    <h3 className="font-bold text-foreground text-lg">100% Free Services</h3>
+                    <h3 className="font-bold text-foreground text-base">100% Free Services</h3>
                   </div>
-                  <ul className="space-y-2">
+                  <ul className="space-y-1.5">
                     {freeServices.map((service) => (
                       <li
                         key={service}
-                        className="text-sm text-muted flex items-center gap-3 bg-white/70 rounded-xl px-4 py-2.5 border border-white/50"
+                        className="text-sm text-muted flex items-center gap-2.5 px-1 py-1.5"
                       >
-                        <span className="w-2 h-2 rounded-full bg-solar-green shrink-0" />
+                        <span className="w-1.5 h-1.5 rounded-full bg-solar-green shrink-0" />
                         {service}
                       </li>
                     ))}
@@ -233,16 +227,16 @@ export default function ContactPage() {
                   href={`https://wa.me/91${company.whatsapp}?text=Hi Elite Ventures, I want a free solar consultation.`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center justify-center gap-3 w-full py-3.5 rounded-2xl bg-[#25D366] text-white font-bold shadow-xl shadow-[#25D366]/30 hover:bg-[#20bd5a] card-3d transition-all duration-300"
+                  className="flex items-center justify-center gap-3 w-full py-3 rounded-xl bg-[#25D366] text-white font-bold hover:bg-[#20bd5a] transition-colors"
                 >
-                  <WhatsAppIcon className="w-6 h-6" />
+                  <WhatsAppIcon className="w-5 h-5" />
                   Chat on WhatsApp Now
                 </a>
               </div>
 
-              <div className="rounded-2xl overflow-hidden shadow-xl border border-border min-h-[240px] md:min-h-[300px] h-full relative card-3d">
-                <div className="absolute top-3 left-3 z-10 bg-white/95 backdrop-blur-sm rounded-lg px-3 py-1.5 flex items-center gap-2 shadow-md">
-                  <MapPin className="w-4 h-4 text-accent" />
+              <div className="rounded-xl overflow-hidden border border-border min-h-[220px] md:min-h-[280px] h-full relative">
+                <div className="absolute top-3 left-3 z-10 bg-white rounded-md px-2.5 py-1 flex items-center gap-1.5 shadow-sm border border-border">
+                  <MapPin className="w-3.5 h-3.5 text-accent" />
                   <span className="text-foreground text-xs font-semibold">Our Office — Barshi</span>
                 </div>
                 <iframe

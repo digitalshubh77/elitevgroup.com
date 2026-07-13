@@ -258,19 +258,19 @@ body {
 }
 
 .glass-card {
-  background: rgba(255, 255, 255, 0.07);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
 }
 
 .glass-card-strong {
   background: rgba(255, 255, 255, 0.12);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.15);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.1);
 }
 
 .section-pattern {
@@ -342,14 +342,12 @@ body {
 }
 
 .card-hover {
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
 }
 
 .card-hover:hover {
-  transform: translateY(-8px) rotateX(3deg) rotateY(-2deg);
-  box-shadow:
-    0 24px 48px -12px rgba(12, 74, 110, 0.25),
-    0 12px 24px -8px rgba(245, 158, 11, 0.12);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px -8px rgba(12, 74, 110, 0.16);
 }
 
 /* ── 3D utilities ── */
@@ -375,19 +373,13 @@ body {
 }
 
 .card-3d {
-  transform-style: preserve-3d;
-  transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.45s ease;
-  box-shadow:
-    0 4px 6px -1px rgba(12, 74, 110, 0.08),
-    0 12px 24px -8px rgba(12, 74, 110, 0.12);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  box-shadow: 0 1px 2px rgba(12, 74, 110, 0.04), 0 4px 12px -4px rgba(12, 74, 110, 0.08);
 }
 
 .card-3d:hover {
-  transform: translateY(-10px) rotateX(5deg) rotateY(-3deg) translateZ(12px);
-  box-shadow:
-    0 28px 56px -16px rgba(12, 74, 110, 0.3),
-    0 0 0 1px rgba(245, 158, 11, 0.15),
-    inset 0 1px 0 rgba(255, 255, 255, 0.6);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px -6px rgba(12, 74, 110, 0.14);
 }
 
 .solar-3d-scene {
@@ -603,23 +595,27 @@ body {
 /* ── Shine overlay on hover ── */
 .shine-hover {
   position: relative;
-  overflow: hidden;
 }
 
-.shine-hover::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: -150%;
-  width: 80%;
-  height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.08), transparent);
-  transform: skewX(-20deg);
-  transition: left 0.6s ease;
-}
+@media (prefers-reduced-motion: reduce) {
+  .card-hover:hover,
+  .card-3d:hover,
+  .btn-shine:hover {
+    transform: none;
+  }
 
-.shine-hover:hover::before {
-  left: 150%;
+  .animate-border-glow,
+  .animate-aurora-1,
+  .animate-aurora-2,
+  .animate-aurora-3,
+  .animate-gradient-shift,
+  .animate-float,
+  .animate-float-reverse,
+  .animate-float-3d,
+  .animate-orbit-3d,
+  .animate-grid-move {
+    animation: none !important;
+  }
 }
 
 /* ── Floating WhatsApp ── */

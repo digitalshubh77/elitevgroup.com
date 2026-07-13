@@ -15,20 +15,20 @@ interface ButtonProps extends React.AnchorHTMLAttributes<HTMLAnchorElement> {
 
 const variants: Record<ButtonVariant, string> = {
   primary:
-    "bg-gradient-to-r from-accent to-accent-light text-primary-dark font-semibold shadow-lg shadow-accent/30 hover:shadow-accent/50 hover:-translate-y-0.5",
+    "bg-gradient-to-r from-accent to-accent-light text-primary-dark font-semibold shadow-sm shadow-accent/30 hover:shadow-accent/50 hover:-translate-y-0.5",
   secondary:
-    "bg-primary text-white hover:bg-primary-dark shadow-lg shadow-primary/20",
+    "bg-primary text-white hover:bg-primary-dark shadow-sm shadow-primary/20",
   outline:
     "border-2 border-white/30 text-white hover:bg-white/10 backdrop-blur-sm",
   whatsapp:
-    "bg-[#25D366] text-white hover:bg-[#20bd5a] shadow-lg shadow-[#25D366]/30",
+    "bg-[#25D366] text-white hover:bg-[#20bd5a] shadow-sm shadow-[#25D366]/30",
   ghost: "text-primary hover:bg-primary/5",
 };
 
 const sizes: Record<ButtonSize, string> = {
-  sm: "px-4 py-2 text-sm rounded-lg",
-  md: "px-6 py-3 text-base rounded-xl",
-  lg: "px-8 py-4 text-lg rounded-xl",
+  sm: "px-4 py-2 text-xs rounded-lg",
+  md: "px-6 py-3 text-sm rounded-xl",
+  lg: "px-8 py-3.5 text-base rounded-xl",
 };
 
 export default function Button({

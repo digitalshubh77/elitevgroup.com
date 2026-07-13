@@ -37,22 +37,22 @@ export default function HeroSection() {
         <div className="absolute top-1/4 -left-24 w-64 h-64 bg-accent/15 rounded-full blur-[80px] animate-aurora-1 pointer-events-none z-[1]" />
         <div className="absolute bottom-1/4 -right-24 w-72 h-72 bg-solar-green/10 rounded-full blur-[80px] animate-aurora-2 pointer-events-none z-[1]" />
 
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-[4.5rem] pb-6 sm:pb-8 z-10 perspective-1000">
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-[4.5rem] pb-4 sm:pb-5 z-10">
           <div className="grid lg:grid-cols-2 gap-4 lg:gap-6 items-center">
             <div className="text-center lg:text-left preserve-3d">
-              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-card-strong text-accent-light text-sm font-semibold mb-3 border border-accent/20 animate-fade-up card-3d">
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-card-strong text-accent-light text-sm font-semibold mb-3 border border-accent/20 animate-fade-up">
                 <Sparkles className="w-4 h-4 animate-pulse-glow" />
                 {company.tagline}
               </div>
 
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-[4.25rem] font-extrabold text-white leading-[1.08] tracking-tight animate-fade-up delay-100 text-3d-glow">
+              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white leading-[1.08] tracking-tight animate-fade-up delay-100 text-3d-glow">
                 Turn Your Rooftop Into a{" "}
                 <span className="gradient-text block sm:inline mt-1 sm:mt-0">
                   Power Plant
                 </span>
               </h1>
 
-              <p className="mt-3 text-lg md:text-xl text-white/75 max-w-xl mx-auto lg:mx-0 leading-relaxed animate-fade-up delay-200">
+              <p className="mt-3 text-base md:text-lg text-white/75 max-w-xl mx-auto lg:mx-0 leading-relaxed animate-fade-up delay-200">
                 Save your electricity bill with government-approved rooftop solar.
                 We install solar systems for homes, shops, and industries across
                 Maharashtra.
@@ -91,7 +91,7 @@ export default function HeroSection() {
                 ].map(({ icon: Icon, text }) => (
                   <span
                     key={text}
-                    className="flex items-center gap-2 px-3 py-2 rounded-full glass-card text-white/80 text-sm font-medium card-3d"
+                    className="flex items-center gap-2 px-3 py-2 rounded-full glass-card text-white/80 text-sm font-medium"
                   >
                     <Icon className="w-4 h-4 text-accent shrink-0" />
                     {text}

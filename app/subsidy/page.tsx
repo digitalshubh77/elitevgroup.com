@@ -39,10 +39,10 @@ export default function SubsidyPage() {
             {subsidyTiers.map((tier, i) => (
               <div
                 key={tier.size}
-                className={`relative rounded-2xl p-6 md:p-7 text-center card-hover shine-hover overflow-hidden ${
+                className={`relative rounded-xl p-4 md:p-5 text-center overflow-hidden ${
                   i === 2
-                    ? "subsidy-card-featured text-white shadow-2xl shadow-primary/40 md:scale-105 border-2 border-accent/40"
-                    : "bg-white border border-border shadow-xl"
+                    ? "subsidy-card-featured text-white border border-accent/30"
+                    : "bg-white border border-border"
                 }`}
               >
                 {i === 2 && (
@@ -59,22 +59,22 @@ export default function SubsidyPage() {
                     className={`w-8 h-8 ${i === 2 ? "text-accent-light" : "text-accent"}`}
                   />
                 </div>
-                <p className={`text-lg font-semibold mb-2 ${i === 2 ? "text-white/80" : "text-muted"}`}>
+                <p className={`text-base font-semibold mb-2 ${i === 2 ? "text-white/80" : "text-muted"}`}>
                   {tier.size}
                 </p>
-                <p className={`text-3xl md:text-5xl font-extrabold ${i === 2 ? "text-accent-light" : "text-primary"}`}>
+                <p className={`text-2xl md:text-4xl font-extrabold ${i === 2 ? "text-accent-light" : "text-primary"}`}>
                   {tier.amount}
                 </p>
               </div>
             ))}
           </div>
 
-          <div className="overflow-x-auto rounded-2xl shadow-xl border border-border">
+          <div className="overflow-x-auto rounded-2xl shadow-sm border border-border">
             <table className="w-full bg-white overflow-hidden">
               <thead>
                 <tr className="bg-gradient-to-r from-primary to-primary-dark text-white">
-                  <th className="px-6 py-5 text-left font-semibold text-lg">System Size</th>
-                  <th className="px-6 py-5 text-left font-semibold text-lg">Subsidy Amount</th>
+                  <th className="px-6 py-5 text-left font-semibold text-base">System Size</th>
+                  <th className="px-6 py-5 text-left font-semibold text-base">Subsidy Amount</th>
                 </tr>
               </thead>
               <tbody>
@@ -84,7 +84,7 @@ export default function SubsidyPage() {
                     className={`${i % 2 === 0 ? "bg-white" : "bg-background"} hover:bg-accent/5 transition-colors`}
                   >
                     <td className="px-6 py-5 font-semibold text-foreground">{tier.size}</td>
-                    <td className="px-6 py-5 font-bold text-primary text-xl">
+                    <td className="px-6 py-5 font-bold text-primary text-base">
                       {tier.amount}
                       {i === 2 && (
                         <span className="ml-2 text-xs font-normal text-muted">(maximum limit)</span>
@@ -108,12 +108,11 @@ export default function SubsidyPage() {
                 centered={false}
                 className="mb-4"
               />
-              <ul className="space-y-3">
-                {subsidyImportantPoints.map((point, i) => (
+              <ul className="space-y-2">
+                {subsidyImportantPoints.map((point) => (
                   <li
                     key={point}
-                    className="flex items-start gap-3 bg-white rounded-xl p-5 border border-border shadow-sm card-hover shine-hover animate-fade-up"
-                    style={{ animationDelay: `${i * 0.08}s` }}
+                    className="flex items-start gap-3 bg-white rounded-lg px-4 py-3 border border-border"
                   >
                     <CheckCircle className="w-5 h-5 text-solar-green shrink-0 mt-0.5" />
                     <span className="text-muted leading-relaxed">{point}</span>
@@ -129,17 +128,16 @@ export default function SubsidyPage() {
                 centered={false}
                 className="mb-4"
               />
-              <ol className="space-y-3">
+              <ol className="space-y-2">
                 {subsidyHelpSteps.map((step, i) => (
                   <li
                     key={step}
-                    className="flex items-start gap-4 bg-white rounded-xl p-5 border border-border shadow-sm card-hover shine-hover animate-fade-up"
-                    style={{ animationDelay: `${i * 0.08}s` }}
+                    className="flex items-start gap-3 bg-white rounded-lg px-4 py-3 border border-border"
                   >
-                    <span className="w-9 h-9 rounded-xl bg-gradient-to-br from-accent to-accent-light text-primary-dark font-bold flex items-center justify-center shrink-0 text-sm shadow-md">
+                    <span className="w-7 h-7 rounded-md bg-accent text-primary-dark font-bold flex items-center justify-center shrink-0 text-sm">
                       {i + 1}
                     </span>
-                    <span className="text-muted leading-relaxed pt-1.5">{step}</span>
+                    <span className="text-muted leading-relaxed pt-0.5">{step}</span>
                   </li>
                 ))}
               </ol>
@@ -150,12 +148,12 @@ export default function SubsidyPage() {
 
       <PageSection variant="white">
         <div className="max-w-3xl mx-auto px-4 text-center">
-          <div className="bg-gradient-to-br from-accent/10 to-primary/5 rounded-2xl p-4 md:p-5 border border-accent/20 shadow-xl">
+          <div className="bg-gradient-to-br from-accent/10 to-primary/5 rounded-2xl p-4 md:p-5 border border-accent/20 shadow-sm">
             <IndianRupee className="w-14 h-14 text-accent mx-auto mb-5" />
-            <h3 className="text-2xl md:text-3xl font-bold text-foreground mb-4">
+            <h3 className="text-xl md:text-2xl font-bold text-foreground mb-4">
               Want to know your exact subsidy?
             </h3>
-            <p className="text-muted mb-5 text-lg">
+            <p className="text-muted mb-5 text-base">
               Call or WhatsApp us — we&apos;ll calculate your subsidy based on your roof
               size and electricity usage, completely free.
             </p>

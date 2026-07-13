@@ -24,7 +24,7 @@ export default function Footer() {
                 />
               </div>
               <div>
-                <p className="font-bold text-lg">{company.shortName}</p>
+                <p className="font-bold text-base">{company.shortName}</p>
                 <p className="text-accent-light text-sm">{company.tagline}</p>
               </div>
             </div>
@@ -64,7 +64,7 @@ export default function Footer() {
           </div>
 
           <div>
-            <h3 className="font-bold text-lg mb-5 text-accent-light">
+            <h3 className="font-bold text-base mb-5 text-accent-light">
               Quick Links
             </h3>
             <ul className="space-y-3">
@@ -82,7 +82,7 @@ export default function Footer() {
           </div>
 
           <div>
-            <h3 className="font-bold text-lg mb-5 text-accent-light">
+            <h3 className="font-bold text-base mb-5 text-accent-light">
               Free Services
             </h3>
             <ul className="space-y-3">
@@ -99,7 +99,7 @@ export default function Footer() {
           </div>
 
           <div>
-            <h3 className="font-bold text-lg mb-5 text-accent-light">
+            <h3 className="font-bold text-base mb-5 text-accent-light">
               Contact Us
             </h3>
             <ul className="space-y-4">

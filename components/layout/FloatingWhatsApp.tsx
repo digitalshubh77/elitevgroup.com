@@ -14,7 +14,7 @@ export default function FloatingWhatsApp() {
       target="_blank"
       rel="noopener noreferrer"
       aria-label={`WhatsApp ${company.phoneDisplay}`}
-      className="group fixed bottom-6 right-5 sm:bottom-8 sm:right-8 z-[60] flex items-center justify-center w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-[#25D366] text-white shadow-2xl shadow-[#25D366]/40 hover:bg-[#20bd5a] hover:scale-110 transition-all duration-300 whatsapp-float-btn"
+      className="group fixed bottom-6 right-5 sm:bottom-8 sm:right-8 z-[60] flex items-center justify-center w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-[#25D366] text-white shadow-sm shadow-[#25D366]/40 hover:bg-[#20bd5a] hover:scale-110 transition-all duration-300 whatsapp-float-btn"
     >
       <span className="absolute inset-0 rounded-full bg-[#25D366] animate-whatsapp-ping" />
       <span className="absolute inset-0 rounded-full bg-[#25D366]/30 animate-whatsapp-pulse" />
