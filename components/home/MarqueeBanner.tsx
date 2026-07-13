@@ -1,4 +1,3 @@
-import { company } from "@/lib/data";
 import { Sun, Shield, Zap, Award } from "lucide-react";
 
 const items = [

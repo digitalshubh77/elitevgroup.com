@@ -22,11 +22,11 @@ export const company = {
 export const navLinks = [
   { href: "/", label: "Home", enabled: true },
   { href: "/about", label: "About Us", enabled: true },
-  { href: "/services", label: "Services", enabled: false },
-  { href: "/subsidy", label: "Subsidy", enabled: false },
-  { href: "/process", label: "Process", enabled: false },
-  { href: "/products", label: "Products", enabled: false },
-  { href: "/finance", label: "Finance", enabled: false },
+  { href: "/services", label: "Services", enabled: true },
+  { href: "/subsidy", label: "Subsidy", enabled: true },
+  { href: "/process", label: "Process", enabled: true },
+  { href: "/products", label: "Products", enabled: true },
+  { href: "/finance", label: "Finance", enabled: true },
   { href: "/contact", label: "Contact", enabled: true },
 ];
 

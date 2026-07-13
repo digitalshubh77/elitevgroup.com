@@ -3,7 +3,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { Menu, X, Phone } from "lucide-react";
 import { WhatsAppIcon } from "@/components/ui/SocialIcons";
 import { navLinks, company } from "@/lib/data";
@@ -16,6 +16,7 @@ interface NavItemProps {
   enabled: boolean;
   pathname: string;
   mobile?: boolean;
+  onNavigate?: () => void;
 }
 
 function NavItem({
@@ -24,6 +25,7 @@ function NavItem({
   enabled,
   pathname,
   mobile,
+  onNavigate,
 }: NavItemProps) {
   const isActive = pathname === href;
 
@@ -50,6 +52,7 @@ function NavItem({
   return (
     <Link
       href={href}
+      onClick={onNavigate}
       className={cn(
         mobile
           ? cn(
@@ -74,10 +77,6 @@ function NavItem({
 export default function Navbar() {
   const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false);
-
-  useEffect(() => {
-    setIsOpen(false);
-  }, [pathname]);
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 w-full bg-white shadow-md shadow-primary/5 py-2.5 transition-all duration-300">
@@ -158,6 +157,7 @@ export default function Navbar() {
                   enabled={link.enabled}
                   pathname={pathname}
                   mobile
+                onNavigate={() => setIsOpen(false)}
                 />
               ))}
               <div className="pt-3 mt-1 border-t border-border space-y-2">
