@@ -14,9 +14,23 @@ import { CheckCircle, IndianRupee, Phone } from "lucide-react";
 import { WhatsAppIcon } from "@/components/ui/SocialIcons";
 
 export const metadata: Metadata = {
-  title: "Solar Subsidy",
+  title: "PM Surya Ghar Solar Subsidy up to ₹78,000",
   description:
-    "Get government subsidy up to ₹78,000 under PM Surya Ghar: Muft Bijli Yojana for home rooftop solar. We handle the full application free.",
+    "Get government subsidy up to ₹78,000 under PM Surya Ghar: Muft Bijli Yojana for home rooftop solar in Maharashtra. Elite Ventures handles the full application free of cost.",
+  keywords: [
+    "PM Surya Ghar subsidy",
+    "solar subsidy Maharashtra",
+    "rooftop solar subsidy 78000",
+    "Muft Bijli Yojana",
+    "home solar subsidy",
+  ],
+  alternates: { canonical: "/subsidy" },
+  openGraph: {
+    title: "PM Surya Ghar Solar Subsidy up to ₹78,000",
+    description:
+      "Government subsidy for home rooftop solar — ₹30,000 / ₹60,000 / ₹78,000. Full free application support by Elite Ventures.",
+    url: "/subsidy",
+  },
 };
 
 export default function SubsidyPage() {

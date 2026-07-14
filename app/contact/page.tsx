@@ -19,8 +19,21 @@ import {
 import { FacebookIcon, InstagramIcon, WhatsAppIcon } from "@/components/ui/SocialIcons";
 
 export const metadata: Metadata = {
-  title: "Contact Us",
-  description: `Contact ${company.name} for free site visit, quotation, and solar subsidy guidance. Call ${company.phoneDisplay}.`,
+  title: "Contact Us — Free Solar Quote in Maharashtra",
+  description: `Contact ${company.legalName} in Barshi for free site visit, quotation and solar subsidy guidance. Call or WhatsApp +91 ${company.phoneDisplay}. Serving entire Maharashtra.`,
+  keywords: [
+    "contact Elite Ventures",
+    "solar quote Barshi",
+    "free solar site visit",
+    "WhatsApp solar consultation",
+    "solar company Solapur",
+  ],
+  alternates: { canonical: "/contact" },
+  openGraph: {
+    title: `Contact ${company.legalName}`,
+    description: `Book a free site visit or get solar subsidy guidance. Call +91 ${company.phoneDisplay}.`,
+    url: "/contact",
+  },
 };
 
 const quickActions = [

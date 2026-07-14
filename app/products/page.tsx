@@ -9,9 +9,25 @@ import { panelBrands, inverterBrands } from "@/lib/data";
 import { Shield, Battery, CheckCircle2 } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Products & Brands",
+  title: "Solar Panels & Inverter Brands",
   description:
-    "Trusted Indian solar panel brands — Waaree, Tata, Adani, ReNew, Vikram. Polycab inverters. Up to 30-year panel warranty.",
+    "Government-approved Made-in-India solar panels — Waaree, Tata Power Solar, Adani, ReNew, Vikram Solar. Polycab inverters with up to 30-year panel warranty from Elite Ventures.",
+  keywords: [
+    "Waaree solar panels",
+    "Tata Power Solar",
+    "Adani Solar",
+    "ReNew solar",
+    "Vikram Solar",
+    "Polycab inverter",
+    "government approved solar panels",
+  ],
+  alternates: { canonical: "/products" },
+  openGraph: {
+    title: "Solar Products & Brands | Elite Ventures",
+    description:
+      "Trusted Indian solar panel and inverter brands with up to 30-year warranty — approved for PM Surya Ghar subsidy.",
+    url: "/products",
+  },
 };
 
 export default function ProductsPage() {

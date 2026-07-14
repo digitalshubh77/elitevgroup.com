@@ -20,8 +20,20 @@ import {
 } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "About Us",
-  description: `Learn about ${company.name} — solar installation experts in Barshi, Maharashtra with 20+ years experience and 100+ installations.`,
+  title: "About Us — Solar Experts in Barshi, Maharashtra",
+  description: `Learn about ${company.legalName} — rooftop solar installation experts in Barshi, Maharashtra with ${company.experience} years team experience and ${company.installations} installations. ${company.tagline}.`,
+  keywords: [
+    "about Elite Ventures",
+    "solar company Barshi",
+    "solar experts Maharashtra",
+    "Elite Ventures Pvt Ltd",
+  ],
+  alternates: { canonical: "/about" },
+  openGraph: {
+    title: `About ${company.legalName}`,
+    description: `Solar installation experts in Barshi, Maharashtra with ${company.experience} years team experience and ${company.installations} installations.`,
+    url: "/about",
+  },
 };
 
 const quickFacts = [

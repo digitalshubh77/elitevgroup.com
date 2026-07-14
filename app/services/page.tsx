@@ -8,9 +8,23 @@ import { services, systemSizes } from "@/lib/data";
 import { getIcon } from "@/lib/icons";
 
 export const metadata: Metadata = {
-  title: "Our Services",
+  title: "Solar Installation Services in Maharashtra",
   description:
-    "Complete solar solutions — residential, commercial, industrial installation, maintenance, net metering, and subsidy documentation help.",
+    "Complete solar solutions across Maharashtra — residential, commercial and industrial rooftop installation, maintenance, net metering, and free subsidy documentation by Elite Ventures.",
+  keywords: [
+    "solar installation services",
+    "residential solar Maharashtra",
+    "commercial solar Barshi",
+    "industrial solar Solapur",
+    "net metering help",
+  ],
+  alternates: { canonical: "/services" },
+  openGraph: {
+    title: "Solar Installation Services | Elite Ventures",
+    description:
+      "Residential, commercial and industrial solar installation with maintenance, net metering and subsidy support across Maharashtra.",
+    url: "/services",
+  },
 };
 
 export default function ServicesPage() {

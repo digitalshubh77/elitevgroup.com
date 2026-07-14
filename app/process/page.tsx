@@ -7,9 +7,22 @@ import { processSteps } from "@/lib/data";
 import { Clock, Zap } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Installation Process",
+  title: "Solar Installation Process in About 8 Days",
   description:
-    "Our 5-step solar installation process — from site visit to net metering in about 8 days.",
+    "Elite Ventures 5-step solar installation process in Maharashtra — free site visit, quotation, subsidy paperwork, installation and net metering in about 8 days.",
+  keywords: [
+    "solar installation process",
+    "8 days solar install",
+    "net metering process Maharashtra",
+    "rooftop solar steps",
+  ],
+  alternates: { canonical: "/process" },
+  openGraph: {
+    title: "Solar Installation Process | Elite Ventures",
+    description:
+      "From first call to solar power in about 8 days — site visit, subsidy docs, install and net metering.",
+    url: "/process",
+  },
 };
 
 export default function ProcessPage() {

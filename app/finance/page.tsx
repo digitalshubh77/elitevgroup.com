@@ -15,9 +15,23 @@ import {
 import { WhatsAppIcon } from "@/components/ui/SocialIcons";
 
 export const metadata: Metadata = {
-  title: "Finance & EMI",
+  title: "Solar Finance & EMI from 5.75%*",
   description:
-    "Go solar without a big payment — bank finance available at interest rates starting from 5.75%*. Free electricity bill analysis on WhatsApp.",
+    "Go solar without a big upfront payment. Bank finance and EMI options from 5.75%* with Elite Ventures in Maharashtra. Free electricity bill analysis on WhatsApp.",
+  keywords: [
+    "solar EMI",
+    "solar loan Maharashtra",
+    "solar finance Barshi",
+    "rooftop solar EMI",
+    "electricity bill analysis",
+  ],
+  alternates: { canonical: "/finance" },
+  openGraph: {
+    title: "Solar Finance & EMI | Elite Ventures",
+    description:
+      "Easy bank finance for rooftop solar from 5.75%*. Free WhatsApp bill analysis and subsidy guidance.",
+    url: "/finance",
+  },
 };
 
 const financeFeatures = [
