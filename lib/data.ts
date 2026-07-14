@@ -1,6 +1,7 @@
 export const company = {
   name: "Elite Ventures Private Limited",
   shortName: "Elite Ventures",
+  legalName: "Elite Ventures Pvt. Ltd.",
   tagline: "Lighting The Future",
   yearStarted: 2026,
   experience: "20+",
@@ -17,6 +18,7 @@ export const company = {
   facebook:
     "https://www.facebook.com/profile.php?id=61589653180931",
   instagram: "https://www.instagram.com/eliteventures5959/",
+  logo: "/logo.png?v=5",
 };
 
 export const navLinks = [
@@ -159,14 +161,17 @@ export const processSteps = [
 ];
 
 export const panelBrands = [
-  "Waaree",
-  "Tata Power Solar",
-  "Adani Solar",
-  "ReNew",
-  "Vikram Solar",
+  { name: "Waaree", logo: "/brands/waaree.svg", initials: "W" },
+  { name: "Tata Power Solar", logo: "/brands/tata.svg", initials: "T" },
+  { name: "Adani Solar", logo: "/brands/adani.svg", initials: "A" },
+  { name: "ReNew", logo: "/brands/renew.svg", initials: "R" },
+  { name: "Vikram Solar", logo: "/brands/vikram.svg", initials: "V" },
 ];
 
-export const inverterBrands = ["Polycab", "Other leading brands"];
+export const inverterBrands = [
+  { name: "Polycab", logo: "/brands/polycab.svg", initials: "P" },
+  { name: "Other leading brands", logo: "/brands/other.svg", initials: "+" },
+];
 
 export const systemSizes = ["1 kW", "2 kW", "3 kW", "5 kW and above"];
 

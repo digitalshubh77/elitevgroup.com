@@ -73,12 +73,12 @@ export default function HeroVisual() {
         </div>
       </div>
 
-      <div className="absolute -top-2 -right-4 animate-float hidden sm:block preserve-3d">
-        <TiltBadge value="100+" label="Projects Done" accent />
+      <div className="absolute -top-2 -right-4 animate-float preserve-3d">
+        <TiltBadge value="100+" label="Installations" accent />
       </div>
 
-      <div className="absolute -bottom-2 -left-4 animate-float-reverse hidden sm:block preserve-3d">
-        <TiltBadge value="₹78K" label="Max Subsidy" green />
+      <div className="absolute -bottom-2 -left-4 animate-float-reverse preserve-3d">
+        <TiltBadge value="20+" label="Years Experience" green />
       </div>
     </div>
   );

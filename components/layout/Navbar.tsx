@@ -30,7 +30,7 @@ function NavItem({
   const isActive = pathname === href;
 
   const desktopClasses =
-    "px-3 2xl:px-4 py-2.5 text-xs 2xl:text-sm font-semibold rounded-lg whitespace-nowrap shrink-0 transition-all duration-200";
+    "px-2.5 2xl:px-3.5 py-2 text-xs 2xl:text-sm font-semibold rounded-lg whitespace-nowrap shrink-0 transition-all duration-200";
 
   if (!enabled) {
     return (
@@ -79,30 +79,23 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 w-full bg-white shadow-md shadow-primary/5 py-2.5 transition-all duration-300">
-      <nav className="w-full max-w-[100vw] px-4 sm:px-6 lg:px-10">
-        <div className="grid grid-cols-[auto_1fr_auto] items-center gap-4 xl:gap-5">
-          <Link href="/" className="flex items-center gap-3 shrink-0 min-w-0">
-            <div className="relative w-12 h-12 rounded-xl overflow-hidden shadow-sm shrink-0">
-              <Image
-                src="/logo.svg"
-                alt={`${company.shortName} logo`}
-                fill
-                className="object-cover"
-                priority
-              />
-            </div>
-            <div className="hidden lg:block min-w-0">
-              <p className="font-extrabold text-lg xl:text-xl leading-tight text-primary truncate">
-                {company.shortName}
-              </p>
-              <p className="text-xs xl:text-sm font-semibold tracking-wide text-accent truncate hidden xl:block">
-                {company.tagline}
-              </p>
-            </div>
+    <header className="fixed top-0 left-0 right-0 z-50 w-full bg-white shadow-md shadow-primary/5 py-2 transition-all duration-300">
+      <nav className="w-full max-w-[100vw] px-3 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-[1fr_auto] xl:grid-cols-[auto_1fr_auto] items-center gap-2 sm:gap-4">
+          <Link href="/" className="flex items-center shrink-0" aria-label={company.legalName}>
+            <Image
+              src={company.logo}
+              alt={company.legalName}
+              width={662}
+              height={352}
+              className="h-11 w-auto sm:h-12 xl:h-[3.25rem] object-contain"
+              priority
+              unoptimized
+              sizes="220px"
+            />
           </Link>
 
-          <div className="hidden xl:flex items-center justify-center gap-1 2xl:gap-2 min-w-0 overflow-x-auto scrollbar-hide">
+          <div className="hidden xl:flex items-center justify-center gap-0.5 2xl:gap-1.5 min-w-0 overflow-x-auto scrollbar-hide">
             {navLinks.map((link) => (
               <NavItem
                 key={link.href}
@@ -114,7 +107,7 @@ export default function Navbar() {
             ))}
           </div>
 
-          <div className="flex items-center gap-2 shrink-0 justify-end">
+          <div className="flex items-center gap-1.5 sm:gap-2 shrink-0 justify-end">
             <div className="hidden xl:flex items-center gap-2 shrink-0">
               <a
                 href={`tel:+91${company.phone}`}
@@ -135,6 +128,23 @@ export default function Navbar() {
                 WhatsApp
               </Button>
             </div>
+
+            <a
+              href={`tel:+91${company.phone}`}
+              aria-label={`Call ${company.phoneDisplay}`}
+              className="xl:hidden inline-flex items-center justify-center w-10 h-10 rounded-lg bg-primary/5 text-primary hover:bg-primary/10 transition-colors"
+            >
+              <Phone className="w-5 h-5 text-accent" />
+            </a>
+            <a
+              href={`https://wa.me/91${company.whatsapp}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="WhatsApp"
+              className="xl:hidden inline-flex items-center justify-center w-10 h-10 rounded-lg bg-[#25D366]/10 text-[#25D366] hover:bg-[#25D366]/20 transition-colors"
+            >
+              <WhatsAppIcon className="w-5 h-5" />
+            </a>
 
             <button
               onClick={() => setIsOpen(!isOpen)}
@@ -157,13 +167,13 @@ export default function Navbar() {
                   enabled={link.enabled}
                   pathname={pathname}
                   mobile
-                onNavigate={() => setIsOpen(false)}
+                  onNavigate={() => setIsOpen(false)}
                 />
               ))}
               <div className="pt-3 mt-1 border-t border-border space-y-2">
                 <a
                   href={`tel:+91${company.phone}`}
-                  className="flex items-center gap-2 px-4 py-3 text-base font-bold text-primary"
+                  className="flex items-center gap-2 px-4 py-3 text-sm font-bold text-primary rounded-lg hover:bg-primary/5"
                 >
                   <Phone className="w-5 h-5 text-accent" />
                   Call {company.phoneDisplay}

@@ -1,10 +1,12 @@
-import { Sun, Shield, Zap, Award } from "lucide-react";
+import { Sun, Shield, Zap, Award, MapPin } from "lucide-react";
 
 const items = [
+  { icon: Award, text: "20+ Years Team Experience" },
+  { icon: Award, text: "100+ Installations Completed" },
+  { icon: MapPin, text: "Serving Entire Maharashtra" },
   { icon: Sun, text: "Government Approved Solar Panels" },
   { icon: Shield, text: "30 Year Panel Warranty" },
   { icon: Zap, text: "8 Days Installation" },
-  { icon: Award, text: "100+ Installations Completed" },
   { icon: Sun, text: "PM Surya Ghar Subsidy up to ₹78,000" },
   { icon: Shield, text: "Free Site Visit & Quotation" },
 ];

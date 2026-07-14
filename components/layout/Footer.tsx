@@ -14,20 +14,19 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 pb-6">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-6">
           <div className="lg:col-span-1">
-            <div className="flex items-center gap-3 mb-5">
-              <div className="relative w-12 h-12 rounded-xl overflow-hidden">
+            <Link href="/" className="inline-block mb-5" aria-label={company.legalName}>
+              <div className="inline-flex items-center rounded-lg bg-white px-3 py-2">
                 <Image
-                  src="/logo.svg"
-                  alt={`${company.shortName} logo`}
-                  fill
-                  className="object-cover"
+                  src={company.logo}
+                  alt={company.legalName}
+                  width={662}
+                  height={352}
+                  className="h-12 w-auto object-contain"
+                  sizes="220px"
+                  unoptimized
                 />
               </div>
-              <div>
-                <p className="font-bold text-base">{company.shortName}</p>
-                <p className="text-accent-light text-sm">{company.tagline}</p>
-              </div>
-            </div>
+            </Link>
             <p className="text-white/70 text-sm leading-relaxed mb-5">
               Government-approved rooftop solar installation across Maharashtra.
               Save electricity bills with subsidy up to ₹78,000.

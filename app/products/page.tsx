@@ -1,11 +1,12 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import PageHero from "@/components/layout/PageHero";
 import PageSection from "@/components/layout/PageSection";
 import Container from "@/components/layout/Container";
 import SectionHeading from "@/components/ui/SectionHeading";
 import CTASection from "@/components/home/CTASection";
 import { panelBrands, inverterBrands } from "@/lib/data";
-import { Shield, Sun, Battery, Zap, CheckCircle2 } from "lucide-react";
+import { Shield, Battery, CheckCircle2 } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Products & Brands",
@@ -32,13 +33,19 @@ export default function ProductsPage() {
           <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3">
             {panelBrands.map((brand) => (
               <div
-                key={brand}
-                className="bg-white rounded-xl p-4 border border-border text-center"
+                key={brand.name}
+                className="bg-white rounded-xl p-3 border border-border text-center flex flex-col items-center justify-center gap-2 min-h-[120px]"
               >
-                <div className="w-11 h-11 rounded-xl bg-accent/10 flex items-center justify-center mx-auto mb-2.5">
-                  <Sun className="w-5 h-5 text-accent" />
+                <div className="relative w-full h-12">
+                  <Image
+                    src={brand.logo}
+                    alt={`${brand.name} logo`}
+                    fill
+                    className="object-contain"
+                    sizes="160px"
+                  />
                 </div>
-                <h3 className="font-bold text-foreground">{brand}</h3>
+                <h3 className="font-bold text-foreground text-sm">{brand.name}</h3>
               </div>
             ))}
           </div>
@@ -55,13 +62,19 @@ export default function ProductsPage() {
           <div className="grid sm:grid-cols-2 gap-3 max-w-2xl mx-auto">
             {inverterBrands.map((brand) => (
               <div
-                key={brand}
-                className="bg-white rounded-xl p-4 border border-border text-center"
+                key={brand.name}
+                className="bg-white rounded-xl p-4 border border-border text-center flex flex-col items-center justify-center gap-2 min-h-[110px]"
               >
-                <div className="w-11 h-11 rounded-xl bg-primary/10 flex items-center justify-center mx-auto mb-2.5">
-                  <Zap className="w-5 h-5 text-primary" />
+                <div className="relative w-full h-12">
+                  <Image
+                    src={brand.logo}
+                    alt={`${brand.name} logo`}
+                    fill
+                    className="object-contain"
+                    sizes="160px"
+                  />
                 </div>
-                <h3 className="font-bold text-foreground text-base">{brand}</h3>
+                <h3 className="font-bold text-foreground text-base">{brand.name}</h3>
               </div>
             ))}
           </div>

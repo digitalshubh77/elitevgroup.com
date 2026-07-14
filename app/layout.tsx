@@ -18,8 +18,8 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: {
-    default: `${company.shortName} | ${company.tagline}`,
-    template: `%s | ${company.shortName}`,
+    default: `${company.legalName} | ${company.tagline}`,
+    template: `%s | ${company.legalName}`,
   },
   description:
     "Government-approved rooftop solar installation across Maharashtra. Save electricity bills with subsidy up to ₹78,000. Free site visit, quotation & subsidy guidance.",
@@ -27,6 +27,7 @@ export const metadata: Metadata = {
     "solar installation Maharashtra",
     "rooftop solar Barshi",
     "PM Surya Ghar subsidy",
+    "Elite Ventures Pvt Ltd",
     "Elite Ventures solar",
   ],
 };

@@ -4,6 +4,7 @@ import {
   Phone,
   ArrowRight,
   Sparkles,
+  Award,
 } from "lucide-react";
 import { WhatsAppIcon } from "@/components/ui/SocialIcons";
 import Button from "@/components/ui/Button";
@@ -58,6 +59,10 @@ export default function HeroSection() {
                 Maharashtra.
               </p>
 
+              <p className="mt-3 text-sm md:text-base text-accent-light font-semibold animate-fade-up delay-200">
+                {company.experience} Years Team Experience &amp; {company.installations} Installations Across Maharashtra
+              </p>
+
               <div className="mt-4 flex flex-col sm:flex-row flex-wrap gap-2.5 justify-center lg:justify-start animate-fade-up delay-300">
                 <Button
                   href="/contact"
@@ -69,7 +74,7 @@ export default function HeroSection() {
                   <ArrowRight className="w-5 h-5 shrink-0" />
                 </Button>
                 <Button
-                  href={`https://wa.me/91${company.whatsapp}`}
+                  href={`https://wa.me/91${company.whatsapp}?text=${encodeURIComponent("Hi Elite Ventures, I want a free solar consultation.")}`}
                   external
                   variant="whatsapp"
                   size="lg"
@@ -81,22 +86,37 @@ export default function HeroSection() {
                     WhatsApp: {company.phoneDisplay}
                   </span>
                 </Button>
+                <Button
+                  href={`tel:+91${company.phone}`}
+                  variant="outline"
+                  size="lg"
+                  className="w-full sm:w-auto"
+                >
+                  <Phone className="w-5 h-5 shrink-0" />
+                  Call Now
+                </Button>
               </div>
 
               <div className="mt-3 flex flex-wrap gap-2 justify-center lg:justify-start animate-fade-up delay-400">
-                {[
-                  { icon: Shield, text: "Govt. Approved" },
-                  { icon: Zap, text: "8 Days Install" },
-                  { icon: Phone, text: "Free Consultation" },
-                ].map(({ icon: Icon, text }) => (
-                  <span
-                    key={text}
-                    className="flex items-center gap-2 px-3 py-2 rounded-full glass-card text-white/80 text-sm font-medium"
-                  >
-                    <Icon className="w-4 h-4 text-accent shrink-0" />
-                    {text}
-                  </span>
-                ))}
+                <span className="flex items-center gap-2 px-3 py-2 rounded-full glass-card text-white/80 text-sm font-medium">
+                  <Shield className="w-4 h-4 text-accent shrink-0" />
+                  Govt. Approved
+                </span>
+                <span className="flex items-center gap-2 px-3 py-2 rounded-full glass-card text-white/80 text-sm font-medium">
+                  <Zap className="w-4 h-4 text-accent shrink-0" />
+                  8 Days Install
+                </span>
+                <a
+                  href={`tel:+91${company.phone}`}
+                  className="flex items-center gap-2 px-3 py-2 rounded-full glass-card text-white/80 text-sm font-medium hover:bg-white/10 transition-colors"
+                >
+                  <Phone className="w-4 h-4 text-accent shrink-0" />
+                  Free Consultation
+                </a>
+                <span className="flex items-center gap-2 px-3 py-2 rounded-full glass-card text-white/80 text-sm font-medium">
+                  <Award className="w-4 h-4 text-accent shrink-0" />
+                  {company.experience} Years Experience
+                </span>
               </div>
             </div>
 

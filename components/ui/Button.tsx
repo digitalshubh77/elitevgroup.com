@@ -31,6 +31,16 @@ const sizes: Record<ButtonSize, string> = {
   lg: "px-8 py-3.5 text-base rounded-xl",
 };
 
+function isNativeHref(href: string) {
+  return (
+    href.startsWith("http://") ||
+    href.startsWith("https://") ||
+    href.startsWith("tel:") ||
+    href.startsWith("mailto:") ||
+    href.startsWith("sms:")
+  );
+}
+
 export default function Button({
   variant = "primary",
   size = "md",
@@ -47,12 +57,16 @@ export default function Button({
     className
   );
 
-  if (external) {
+  const useAnchor = external || isNativeHref(href);
+  const openInNewTab =
+    !!external || href.startsWith("http://") || href.startsWith("https://");
+
+  if (useAnchor) {
     return (
       <a
         href={href}
-        target="_blank"
-        rel="noopener noreferrer"
+        target={openInNewTab ? "_blank" : undefined}
+        rel={openInNewTab ? "noopener noreferrer" : undefined}
         className={classes}
         {...props}
       >
