@@ -3,6 +3,7 @@ import HeroSection from "@/components/home/HeroSection";
 import HighlightsSection from "@/components/home/HighlightsSection";
 import SubsidySection from "@/components/home/SubsidySection";
 import ServicesPreview from "@/components/home/ServicesPreview";
+import InstallationShowcase from "@/components/home/InstallationShowcase";
 import WhyChooseUs from "@/components/home/WhyChooseUs";
 import ProcessPreview from "@/components/home/ProcessPreview";
 import CalculatorSection from "@/components/home/CalculatorSection";
@@ -30,6 +31,7 @@ export default function Home() {
       <HighlightsSection />
       <SubsidySection />
       <ServicesPreview />
+      <InstallationShowcase />
       <CalculatorSection />
       <WhyChooseUs />
       <ProcessPreview />

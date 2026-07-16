@@ -11,14 +11,18 @@ import { Shield, Battery, CheckCircle2 } from "lucide-react";
 export const metadata: Metadata = {
   title: "Solar Panels & Inverter Brands",
   description:
-    "Government-approved Made-in-India solar panels — Waaree, Tata Power Solar, Adani, ReNew, Vikram Solar. Polycab inverters with up to 30-year panel warranty from Elite Ventures.",
+    "Government-approved Made-in-India solar panels — Waaree, Tata Power Solar, Adani, ReNew, Vikram Solar. Waaree, Polycab, Microtek, Havells & Luminous inverters with up to 30-year panel warranty from Elite Ventures.",
   keywords: [
     "Waaree solar panels",
     "Tata Power Solar",
     "Adani Solar",
     "ReNew solar",
     "Vikram Solar",
+    "Waaree inverter",
     "Polycab inverter",
+    "Microtek inverter",
+    "Havells inverter",
+    "Luminous inverter",
     "government approved solar panels",
   ],
   alternates: { canonical: "/products" },
@@ -75,7 +79,7 @@ export default function ProductsPage() {
             title="Inverter Brands"
             subtitle="Reliable inverters for maximum energy conversion and long-term performance."
           />
-          <div className="grid sm:grid-cols-2 gap-3 max-w-2xl mx-auto">
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3">
             {inverterBrands.map((brand) => (
               <div
                 key={brand.name}

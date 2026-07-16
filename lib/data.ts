@@ -161,16 +161,19 @@ export const processSteps = [
 ];
 
 export const panelBrands = [
-  { name: "Waaree", logo: "/brands/waaree.svg", initials: "W" },
-  { name: "Tata Power Solar", logo: "/brands/tata.svg", initials: "T" },
+  { name: "Waaree", logo: "/brands/waaree.png", initials: "W" },
+  { name: "Tata Power Solar", logo: "/brands/tata.png", initials: "T" },
   { name: "Adani Solar", logo: "/brands/adani.svg", initials: "A" },
-  { name: "ReNew", logo: "/brands/renew.svg", initials: "R" },
-  { name: "Vikram Solar", logo: "/brands/vikram.svg", initials: "V" },
+  { name: "ReNew", logo: "/brands/renew.png", initials: "R" },
+  { name: "Vikram Solar", logo: "/brands/vikram.webp", initials: "V" },
 ];
 
 export const inverterBrands = [
-  { name: "Polycab", logo: "/brands/polycab.svg", initials: "P" },
-  { name: "Other leading brands", logo: "/brands/other.svg", initials: "+" },
+  { name: "Waaree", logo: "/brands/waaree.png", initials: "W" },
+  { name: "Polycab", logo: "/brands/polycab.png", initials: "P" },
+  { name: "Microtek", logo: "/brands/microtec.svg", initials: "M" },
+  { name: "Havells", logo: "/brands/havells.svg", initials: "H" },
+  { name: "Luminous", logo: "/brands/luminous.webp", initials: "L" },
 ];
 
 export const systemSizes = ["1 kW", "2 kW", "3 kW", "5 kW and above"];

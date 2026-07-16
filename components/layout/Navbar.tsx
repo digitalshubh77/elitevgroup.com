@@ -82,17 +82,29 @@ export default function Navbar() {
     <header className="fixed top-0 left-0 right-0 z-50 w-full bg-white shadow-md shadow-primary/5 py-2 transition-all duration-300">
       <nav className="w-full max-w-[100vw] px-3 sm:px-6 lg:px-8">
         <div className="grid grid-cols-[1fr_auto] xl:grid-cols-[auto_1fr_auto] items-center gap-2 sm:gap-4">
-          <Link href="/" className="flex items-center shrink-0" aria-label={company.legalName}>
+          <Link
+            href="/"
+            className="flex items-center gap-2 sm:gap-2.5 shrink-0 min-w-0"
+            aria-label={company.legalName}
+          >
             <Image
               src={company.logo}
-              alt={company.legalName}
+              alt=""
               width={662}
               height={352}
-              className="h-11 w-auto sm:h-12 xl:h-[3.25rem] object-contain"
+              className="h-11 w-auto sm:h-12 xl:h-[3.25rem] object-contain shrink-0"
               priority
               unoptimized
               sizes="220px"
             />
+            <div className="flex flex-col leading-none min-w-0">
+              <span className="font-bold text-foreground text-sm sm:text-base xl:text-lg tracking-tight whitespace-nowrap">
+                {company.shortName}
+              </span>
+              <span className="mt-0.5 font-normal text-foreground/75 text-[9px] sm:text-[10px] xl:text-xs tracking-wide whitespace-nowrap">
+                {company.name.replace(company.shortName, "").trim()}
+              </span>
+            </div>
           </Link>
 
           <div className="hidden xl:flex items-center justify-center gap-0.5 2xl:gap-1.5 min-w-0 overflow-x-auto scrollbar-hide">

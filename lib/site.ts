@@ -71,7 +71,7 @@ export const sitePages = [
     path: "/products",
     title: "Solar Panels & Inverter Brands",
     description:
-      "Government-approved solar panel brands — Waaree, Tata Power Solar, Adani, ReNew, Vikram. Polycab inverters with up to 30-year panel warranty.",
+      "Government-approved solar panel brands — Waaree, Tata Power Solar, Adani, ReNew, Vikram. Waaree, Polycab, Microtek, Havells & Luminous inverters with up to 30-year panel warranty.",
     priority: 0.8,
     changeFrequency: "monthly" as const,
   },
