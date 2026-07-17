@@ -165,7 +165,7 @@ export const panelBrands = [
   { name: "Tata Power Solar", logo: "/brands/tata.png", initials: "T" },
   { name: "Adani Solar", logo: "/brands/adani.svg", initials: "A" },
   { name: "ReNew", logo: "/brands/renew.png", initials: "R" },
-  { name: "Vikram Solar", logo: "/brands/vikram.webp", initials: "V" },
+  { name: "Vikram Solar", logo: "/brands/vikram.png", initials: "V" },
 ];
 
 export const inverterBrands = [

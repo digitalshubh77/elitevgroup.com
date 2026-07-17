@@ -56,13 +56,14 @@ export default function ProductsPage() {
                 key={brand.name}
                 className="bg-white rounded-xl p-3 border border-border text-center flex flex-col items-center justify-center gap-2 min-h-[120px]"
               >
-                <div className="relative w-full h-12">
+                <div className="relative w-full h-14">
                   <Image
                     src={brand.logo}
                     alt={`${brand.name} logo`}
                     fill
                     className="object-contain"
                     sizes="160px"
+                    unoptimized
                   />
                 </div>
                 <h3 className="font-bold text-foreground text-sm">{brand.name}</h3>
@@ -85,13 +86,14 @@ export default function ProductsPage() {
                 key={brand.name}
                 className="bg-white rounded-xl p-4 border border-border text-center flex flex-col items-center justify-center gap-2 min-h-[110px]"
               >
-                <div className="relative w-full h-12">
+                <div className="relative w-full h-14">
                   <Image
                     src={brand.logo}
                     alt={`${brand.name} logo`}
                     fill
                     className="object-contain"
                     sizes="160px"
+                    unoptimized
                   />
                 </div>
                 <h3 className="font-bold text-foreground text-base">{brand.name}</h3>

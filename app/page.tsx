@@ -8,6 +8,7 @@ import WhyChooseUs from "@/components/home/WhyChooseUs";
 import ProcessPreview from "@/components/home/ProcessPreview";
 import CalculatorSection from "@/components/home/CalculatorSection";
 import FAQCTASection from "@/components/home/FAQCTASection";
+import RecentInstallations from "@/components/home/RecentInstallations";
 import { siteConfig } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -36,6 +37,7 @@ export default function Home() {
       <WhyChooseUs />
       <ProcessPreview />
       <FAQCTASection />
+      <RecentInstallations />
     </>
   );
 }
