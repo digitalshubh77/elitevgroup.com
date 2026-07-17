@@ -10,7 +10,8 @@ export function getSubsidyAmount(kw: number): number {
 export function recommendSystemSize(monthlyBill: number): number {
   const estimatedUnits = monthlyBill / AVG_UNIT_RATE;
   const rawKw = estimatedUnits / UNITS_PER_KW_MONTHLY;
-  return Math.min(Math.max(Math.ceil(rawKw), 1), 10);
+  // Systems start from 3 kW minimum
+  return Math.min(Math.max(Math.ceil(rawKw), 3), 10);
 }
 
 export interface CalculatorResult {

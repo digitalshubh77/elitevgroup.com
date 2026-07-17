@@ -14,7 +14,7 @@ import { company } from "@/lib/data";
 import Button from "@/components/ui/Button";
 
 export default function ElectricityCalculator() {
-  const [bill, setBill] = useState<string>("3000");
+  const [bill, setBill] = useState<string>("2700");
   const monthlyBill = parseInt(bill) || 0;
   const result =
     monthlyBill > 0 ? calculateSolarSavings(monthlyBill) : null;
@@ -64,7 +64,7 @@ export default function ElectricityCalculator() {
         </label>
 
         <div className="grid grid-cols-2 gap-3">
-          {[1500, 3000, 5000, 8000].map((amount) => (
+          {[2700, 4000, 6000, 10000].map((amount) => (
             <button
               key={amount}
               onClick={() => setBill(String(amount))}
